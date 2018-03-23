@@ -6,21 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://gaobingzhi.github.io">
-  <title>理想 | 黑饼的小站</title>
+  <title>符合正太分布的随机红包算法 | 黑饼的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一个人住在这城市为了填饱肚子就已精疲力尽还谈什么理想那是我们的美梦">
-<meta name="keywords" content="音乐">
+  <meta name="description" content="####解析  java.util.Random里的nextGaussian()，生成的数值符合均值为0方差为1的高斯/正态分布，即符合标准正态分布。  ####关键代码 `public static double getRandomMoney() {        double money = 0;        Random random = new Random();        int">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="理想">
-<meta property="og:url" content="https://gaobingzhi.github.io/2018/01/21/理想/index.html">
+<meta property="og:title" content="符合正太分布的随机红包算法">
+<meta property="og:url" content="https://gaobingzhi.github.io/2018/03/23/符合正太分布的随机红包算法/index.html">
 <meta property="og:site_name" content="黑饼的小站">
-<meta property="og:description" content="一个人住在这城市为了填饱肚子就已精疲力尽还谈什么理想那是我们的美梦">
-<meta property="og:image" content="https://raw.githubusercontent.com/gaobingzhi/Blog-Back-Up/master/musicPhotos/dreams.jpg">
-<meta property="og:updated_time" content="2018-01-21T12:11:10.000Z">
+<meta property="og:description" content="####解析  java.util.Random里的nextGaussian()，生成的数值符合均值为0方差为1的高斯/正态分布，即符合标准正态分布。  ####关键代码 `public static double getRandomMoney() {        double money = 0;        Random random = new Random();        int">
+<meta property="og:updated_time" content="2018-03-23T03:08:07.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="理想">
-<meta name="twitter:description" content="一个人住在这城市为了填饱肚子就已精疲力尽还谈什么理想那是我们的美梦">
-<meta name="twitter:image" content="https://raw.githubusercontent.com/gaobingzhi/Blog-Back-Up/master/musicPhotos/dreams.jpg">
+<meta name="twitter:title" content="符合正太分布的随机红包算法">
+<meta name="twitter:description" content="####解析  java.util.Random里的nextGaussian()，生成的数值符合均值为0方差为1的高斯/正态分布，即符合标准正态分布。  ####关键代码 `public static double getRandomMoney() {        double money = 0;        Random random = new Random();        int">
   
     <link rel="alternative" href="/atom.xml" title="黑饼的小站" type="application/atom+xml">
   
@@ -156,40 +154,47 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-理想" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-符合正太分布的随机红包算法" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      理想
+      符合正太分布的随机红包算法
     </h1>
   
 
         
-        <a href="/2018/01/21/理想/" class="archive-article-date">
-  	<time datetime="2018-01-21T12:01:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
+        <a href="/2018/03/23/符合正太分布的随机红包算法/" class="archive-article-date">
+  	<time datetime="2018-03-23T02:51:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><img src="https://raw.githubusercontent.com/gaobingzhi/Blog-Back-Up/master/musicPhotos/dreams.jpg" alt="理想"></p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=29567189&auto=1&height=66"></iframe>
+        <p>####解析</p>
+<blockquote>
+<p>java.util.Random里的nextGaussian()，生成的数值符合均值为0方差为1的高斯/正态分布，即符合标准正态分布。</p>
+</blockquote>
+<p>####关键代码</p>
+<p>`public static double getRandomMoney() {<br>        double money = 0;<br>        Random random = new Random();<br>        int randomNumber = random.nextInt(1000000);<br>        if (randomNumber &gt; 400000) {<br>            return money;<br>        }</p>
+<pre><code>    if (randomNumber&lt;4000){
+        money = Math.sqrt(10) * random.nextGaussian() + 0.4;
+    }else {
+        money = Math.sqrt(0.02) * random.nextGaussian() + 0.15;
+    }
 
-<p>一个人住在这城市<br>为了填饱肚子就已精疲力尽<br>还谈什么理想<br>那是我们的美梦<br><a id="more"></a><br>梦醒后 还是依然奔波在风雨的街头<br>有时候想哭就把泪 咽进一腔热血的胸口</p>
-<p>公车上我睡过了车站<br>一路上我望着霓虹的北京<br>我的理想把我丢在这个拥挤的人潮<br>车窗外已经是一片白雪茫茫</p>
-<p>又一个四季在轮回<br>而我一无所获的坐在街头<br>只有理想在支撑着那些麻木的血肉</p>
-<p>理想今年你几岁<br>你总是诱惑着年轻的朋友<br>你总是谢了又开 给我惊喜<br>又让我沉入失望的生活里</p>
-<p>公车上我睡过了车站<br>一路上我望着霓虹的北京<br>我的理想把我丢在这个拥挤的人潮<br>车窗外已经是一片白雪茫茫</p>
-<p>又一个四季在轮回<br>而我一无所获的坐在街头<br>只有理想在支撑着那些麻木的血肉</p>
-<p>理想今年你几岁<br>你总是诱惑着年轻的朋友<br>你总是谢了又开 给我惊喜<br>又让我沉入失望的生活里</p>
-<p>又一个年代在变换<br>我已不是无悔的那个青年<br>青春被时光抛弃<br>已是当父亲的年纪</p>
-<p>理想永远都年轻<br>你让我倔强地反抗着命运<br>你让我变得苍白<br>却依然天真的相信花儿会再次的盛开</p>
-<p>阳光之中 到处可见奔忙的人们<br>被拥挤着 被一晃而飞的光阴忽略过</p>
+    if (money &lt; 0.01) {
+        return 0.01;
+    }
 
+    money = formatDouble1(money);
+    return money;
+}
+`
+</code></pre>
       
 
       
@@ -202,7 +207,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">音乐</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -258,7 +263,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://gaobingzhi.github.io/2018/01/21/理想/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://gaobingzhi.github.io/2018/03/23/符合正太分布的随机红包算法/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -272,18 +277,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/01/21/三周一总结-1/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          三周一总结(1)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/01/15/父亲写的散文诗/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">父亲写的散文诗</div>
+    <a href="/2018/03/12/beauty/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">beauty</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -313,7 +309,7 @@
   
 
   
-  <div id="SOHUCS" sid="理想" ></div> 
+  <div id="SOHUCS" sid="符合正太分布的随机红包算法" ></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js" ></script>
 <script type="text/javascript">
     window.changyan.api.config({
