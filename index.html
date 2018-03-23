@@ -178,30 +178,8 @@
         <h4 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h4><blockquote>
 <p>java.util.Random里的nextGaussian()，生成的数值符合均值为0方差为1的高斯/正态分布，即符合标准正态分布。</p>
 </blockquote>
-<p>public static double getRandomMoney(){</p>
-<pre><code>    double money = 0;
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> getRandomMoney()&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">double</span> money = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    Random <span class="built_in">random</span> = <span class="keyword">new</span> Random();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> randomNumber = <span class="built_in">random</span>.nextInt(<span class="number">1000000</span>);</span><br><span class="line">    <span class="built_in">if</span> (randomNumber &gt; <span class="number">400000</span>) &#123;</span><br><span class="line">        <span class="built_in">return</span> money;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">if</span> (randomNumber&lt;<span class="number">4000</span>)&#123;</span><br><span class="line">        money = Math.<span class="built_in">sqrt</span>(<span class="number">10</span>) * <span class="built_in">random</span>.nextGaussian() + <span class="number">0.4</span>;</span><br><span class="line">    &#125;<span class="built_in">else</span> &#123;</span><br><span class="line">        money = Math.<span class="built_in">sqrt</span>(<span class="number">0.02</span>) * <span class="built_in">random</span>.nextGaussian() + <span class="number">0.15</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">if</span> (money &lt; <span class="number">0.01</span>) &#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="number">0.01</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    money = formatDouble1(money);</span><br><span class="line">    <span class="built_in">return</span> money;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-    Random random = new Random();
-
-    int randomNumber = random.nextInt(1000000);
-    if (randomNumber &gt; 400000) {
-        return money;
-    }
-
-    if (randomNumber&lt;4000){
-        money = Math.sqrt(10) * random.nextGaussian() + 0.4;
-    }else {
-        money = Math.sqrt(0.02) * random.nextGaussian() + 0.15;
-    }
-
-    if (money &lt; 0.01) {
-        return 0.01;
-    }
-
-    money = formatDouble1(money);
-    return money;
-}
-</code></pre>
       
 
       
@@ -898,15 +876,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
