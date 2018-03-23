@@ -175,11 +175,20 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h4><blockquote>
+        <h4 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h4><blockquote>
 <p>java.util.Random里的nextGaussian()，生成的数值符合均值为0方差为1的高斯/正态分布，即符合标准正态分布。</p>
 </blockquote>
-<h4 id="关键代码"><a href="#关键代码" class="headerlink" title="关键代码"></a>关键代码</h4><p>`public static double getRandomMoney() {<br>        double money = 0;<br>        Random random = new Random();<br>        int randomNumber = random.nextInt(1000000);<br>        if (randomNumber &gt; 400000) {<br>            return money;<br>        }</p>
-<pre><code>    if (randomNumber&lt;4000){
+<p>public static double getRandomMoney(){</p>
+<pre><code>    double money = 0;
+
+    Random random = new Random();
+
+    int randomNumber = random.nextInt(1000000);
+    if (randomNumber &gt; 400000) {
+        return money;
+    }
+
+    if (randomNumber&lt;4000){
         money = Math.sqrt(10) * random.nextGaussian() + 0.4;
     }else {
         money = Math.sqrt(0.02) * random.nextGaussian() + 0.15;
@@ -192,7 +201,6 @@
     money = formatDouble1(money);
     return money;
 }
-`
 </code></pre>
       
 
@@ -906,11 +914,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">音乐</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">音乐</a>
               </li>
              
               <li class="article-tag-list-item">
