@@ -155,6 +155,92 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Hybrid-App-开发模式下的一次揪心历程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/27/Hybrid-App-开发模式下的一次揪心历程/">Hybrid App 开发模式下的一次揪心历程</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/27/Hybrid-App-开发模式下的一次揪心历程/" class="archive-article-date">
+  	<time datetime="2018-04-27T08:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="WebView-的痛"><a href="#WebView-的痛" class="headerlink" title="WebView 的痛"></a>WebView 的痛</h4><p><img src="http://pics.blackbirdsport.com/album/201807/1502808_1532681666914.png@540w_960h" alt="红包"></p>
+<p>Web App 与 Native App 混合开发模式有着Native App良好的用户体验和Web App 的跨品台优势，所以很是受宠。当然，我们公司也采用了这种模式，采用JsBridge作为两者之间的通信桥梁。WebView可以说是Android最难用的控件了，需要适配Android的各个版本，比如说以下几点：</p>
+<h6 id="一、通过WebView上传文件，就需要继承WebChromeClient"><a href="#一、通过WebView上传文件，就需要继承WebChromeClient" class="headerlink" title="一、通过WebView上传文件，就需要继承WebChromeClient"></a>一、通过WebView上传文件，就需要继承WebChromeClient</h6> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomWebChromeClient</span> <span class="keyword">extends</span> <span class="title">WebChromeClient</span> </span>&#123;</span><br><span class="line">       </span><br><span class="line">       <span class="comment">//扩展浏览器上传文件</span></span><br><span class="line">       <span class="comment">// For Andorid 3.0++</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; uploadMsg, String acceptType)</span> </span>&#123;</span><br><span class="line">           openFileChooserImpl(uploadMsg);</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="comment">//For Andorid 3.0--</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; uploadMsg)</span> </span>&#123;</span><br><span class="line">           openFileChooserImpl(uploadMsg);</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">openFileChooser</span><span class="params">(ValueCallback&lt;Uri&gt; uploadMsg, String acceptType, String capture)</span> </span>&#123;</span><br><span class="line">           openFileChooserImpl(uploadMsg);</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="comment">// For Android &gt; 5.0</span></span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">boolean</span> <span class="title">onShowFileChooser</span><span class="params">(WebView webView, ValueCallback&lt;Uri[]&gt; filePathCallback, FileChooserParams fileChooserParams)</span> </span>&#123;</span><br><span class="line">           openFileChooserImplForAndroid5(filePathCallback);</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">true</span>;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onProgressChanged</span><span class="params">(WebView view, <span class="keyword">int</span> newProgress)</span> </span>&#123;</span><br><span class="line">           <span class="keyword">super</span>.onProgressChanged(view, newProgress);</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="meta">@Override</span></span><br><span class="line">       <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">onReceivedTitle</span><span class="params">(WebView view, String mTitle)</span> </span>&#123;</span><br><span class="line">           <span class="keyword">super</span>.onReceivedTitle(view, mTitle);</span><br><span class="line">           <span class="keyword">if</span> (StringUtil.isEmpty(title)) &#123;</span><br><span class="line">               wvTitleView.setText(mTitle);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p> 同时还需要注意在onActivityResult回调中调用ValueCallback<uri> 或ValueCallback<uri[]> 的onReceiveValue(null) 方法。</uri[]></uri></p>
+<h6 id="二、CustomWebViewClient-设置"><a href="#二、CustomWebViewClient-设置" class="headerlink" title="二、CustomWebViewClient 设置"></a>二、CustomWebViewClient 设置</h6><figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="class"><span class="keyword">class</span> <span class="title">CustomWebViewClient</span> <span class="keyword">extends</span> <span class="title">WVJBWebViewClient</span> </span>&#123;</span><br><span class="line">        String errorPath = <span class="string">"file:///"</span>;</span><br><span class="line">        </span><br><span class="line">        <span class="function"><span class="keyword">private</span> <span class="title">CustomWebViewClient</span><span class="params">(WVJBWebView webView)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>(webView);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">boolean</span> <span class="title">shouldOverrideUrlLoading</span><span class="params">(WebView view, String url)</span> </span>&#123;</span><br><span class="line">            LogUtil.e(<span class="string">"url"</span>, url);</span><br><span class="line">            <span class="function"><span class="keyword">return</span> <span class="keyword">super</span>.<span class="title">shouldOverrideUrlLoading</span><span class="params">(view, url)</span></span>;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onPageStarted</span><span class="params">(WebView view, String url, Bitmap favicon)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>.onPageStarted(view, url, favicon);</span><br><span class="line">            LogUtil.e(<span class="string">"onPageStarted---"</span>, url);</span><br><span class="line">            mProgressBar.setVisibility(View.VISIBLE);</span><br><span class="line">            mProgressBar.setAlpha(<span class="number">1.0</span>f);</span><br><span class="line">            subPageStarted();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onPageFinished</span><span class="params">(WebView view, String url)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>.onPageFinished(view, url);</span><br><span class="line">            <span class="keyword">if</span> (rightButton.getVisibility() == View.GONE) &#123;</span><br><span class="line">                setRightButtonVisibility(View.VISIBLE);</span><br><span class="line">            &#125;</span><br><span class="line">            subPageFinished();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onReceivedError</span><span class="params">(WebView view, WebResourceRequest request, WebResourceError <span class="keyword">error</span>)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (errorLayout.getVisibility() != View.VISIBLE) &#123;</span><br><span class="line">                wvjbWebView.setVisibility(View.GONE);</span><br><span class="line">                errorLayout.setVisibility(View.VISIBLE);</span><br><span class="line">            &#125;</span><br><span class="line">            </span><br><span class="line">            subReceivedError();</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="meta">@Override</span></span><br><span class="line">        <span class="keyword">public</span> <span class="function"><span class="keyword">void</span> <span class="title">onLoadResource</span><span class="params">(WebView view, String url)</span> </span>&#123;</span><br><span class="line">            <span class="keyword">super</span>.onLoadResource(view, url);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h6 id="三、关于WebSettings"><a href="#三、关于WebSettings" class="headerlink" title="三、关于WebSettings"></a>三、关于WebSettings</h6><figure class="highlight pony"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">protected void initSet() &#123;</span><br><span class="line">        wvjbWebView.setWebChromeClient(<span class="function"><span class="keyword">new</span> <span class="title">CustomWebChromeClient</span>());</span></span><br><span class="line"><span class="function">        <span class="title">wvjbWebView</span>.<span class="title">setWebViewClient</span>(new <span class="type">CustomWebViewClient</span>(wvjbWebView));</span></span><br><span class="line"><span class="function">    	<span class="comment">//是否打开debug模式</span></span></span><br><span class="line"><span class="function">        <span class="comment">//WebView.setWebContentsDebuggingEnabled(true);</span></span></span><br><span class="line"><span class="function">        <span class="title">WebSettings</span> <span class="title">webSettings</span> = <span class="title">wvjbWebView</span>.<span class="title">getSettings</span>();</span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        <span class="comment">//如果访问的页面中要与Javascript交互，则webview必须设置支持Javascript</span></span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setJavaScriptEnabled</span>(true);</span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        <span class="comment">//设置自适应屏幕，两者合用</span></span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setUseWideViewPort</span>(true);</span></span><br><span class="line"><span class="function">        <span class="comment">//将图片调整到适合webview的大小</span></span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setLoadWithOverviewMode</span>(true);</span></span><br><span class="line"><span class="function">        <span class="comment">// 缩放至屏幕的大小</span></span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setRenderPriority</span>(<span class="type">WebSettings</span>.<span class="type">RenderPriority</span>.<span class="type">HIGH</span>);</span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        <span class="comment">//设置缓存</span></span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setCacheMode</span>(<span class="type">WebSettings</span>.<span class="type">LOAD_DEFAULT</span>);</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setDomStorageEnabled</span>(true);</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setAppCacheEnabled</span>(true);</span></span><br><span class="line"><span class="function">        <span class="title">if</span> (!<span class="type">ShareUtils</span>.getWebFirstSet(this)) &#123;</span></span><br><span class="line"><span class="function">            <span class="title">ShareUtils</span>.<span class="title">setWebFirstSet</span>(this, true);</span></span><br><span class="line"><span class="function">            <span class="title">String</span> <span class="title">cacheDirPath</span> = <span class="title">getApplicationContext</span>().<span class="title">getDir</span>("cache", <span class="type">Context</span>.<span class="type">MODE_PRIVATE</span>).<span class="title">getPath</span>();</span></span><br><span class="line"><span class="function">            <span class="title">webSettings</span>.<span class="title">setAppCachePath</span>(cacheDirPath);</span></span><br><span class="line"><span class="function">            <span class="title">webSettings</span>.<span class="title">setAppCacheMaxSize</span>(<span class="number">8</span> * <span class="number">1024</span> * <span class="number">1024</span>);</span></span><br><span class="line"><span class="function">        &#125;</span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setBlockNetworkLoads</span>(false);</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setBlockNetworkImage</span>(false);</span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setLayoutAlgorithm</span>(<span class="type">WebSettings</span>.<span class="type">LayoutAlgorithm</span>.<span class="type">SINGLE_COLUMN</span>);</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">supportMultipleWindows</span>();</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setAllowFileAccess</span>(true);</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setNeedInitialFocus</span>(true);</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setJavaScriptCanOpenWindowsAutomatically</span>(true);</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setDefaultTextEncodingName</span>("<span class="type">UTF</span><span class="number">-8</span>");</span></span><br><span class="line"><span class="function">        <span class="title">if</span> (<span class="type">Build</span>.<span class="type">VERSION</span>.<span class="type">SDK_INT</span> &gt;= <span class="number">19</span>) &#123;</span></span><br><span class="line"><span class="function">            <span class="title">webSettings</span>.<span class="title">setLoadsImagesAutomatically</span>(true);</span></span><br><span class="line"><span class="function">        &#125; <span class="title">else</span> &#123;</span></span><br><span class="line"><span class="function">            <span class="title">webSettings</span>.<span class="title">setLoadsImagesAutomatically</span>(false);</span></span><br><span class="line"><span class="function">        &#125;</span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        <span class="comment">//设置Http与Https的混合模式</span></span></span><br><span class="line"><span class="function">        <span class="title">if</span> (<span class="type">Build</span>.<span class="type">VERSION</span>.<span class="type">SDK_INT</span> &gt;= <span class="type">Build</span>.<span class="type">VERSION_CODES</span>.<span class="type">LOLLIPOP</span>) &#123;</span></span><br><span class="line"><span class="function">            <span class="title">webSettings</span>.<span class="title">setMixedContentMode</span>(<span class="type">WebSettings</span>.<span class="type">MIXED_CONTENT_ALWAYS_ALLOW</span>);</span></span><br><span class="line"><span class="function">        &#125;</span></span><br><span class="line"><span class="function">        </span></span><br><span class="line"><span class="function">        <span class="title">String</span> <span class="title">ua</span> = <span class="title">webSettings</span>.<span class="title">getUserAgentString</span>();</span></span><br><span class="line"><span class="function">        <span class="title">webSettings</span>.<span class="title">setUserAgentString</span>(ua + "....");</span></span><br><span class="line"><span class="function">    &#125;</span></span><br></pre></td></tr></table></figure>
+<h4 id="JsBridge-初始化失败，红包打不开的问题"><a href="#JsBridge-初始化失败，红包打不开的问题" class="headerlink" title="JsBridge 初始化失败，红包打不开的问题"></a>JsBridge 初始化失败，红包打不开的问题</h4><h6 id="一、确认Bug产生机型"><a href="#一、确认Bug产生机型" class="headerlink" title="一、确认Bug产生机型"></a>一、确认Bug产生机型</h6><p>Android or iPhone ，如果是Android，确定Android品牌，Bug产生初期，反应的机型都为Vivo手机，奈何身边没有Vivo机型。以为就是Vivo某些机型下产生的Bug。（测试样例不够，不能确定产生的机型）</p>
+<h6 id="二、确定测试环境"><a href="#二、确定测试环境" class="headerlink" title="二、确定测试环境"></a>二、确定测试环境</h6><p>WiFi or 移动网络，移动网络下存在WebView被植入Js的问题，可能会破坏JsBridge桥梁，导致Web与Native 不能进行通行，从而打不开红包。通过测试样例发现，无论WiFi下还是移动网络下都存在红包打不开的问题。确定不是因为流氓广告商通过运营商植入Js脚本导致JsBridge通信不了的问题。</p>
+<h6 id="三、Bug产生的机型不止Vivo机型"><a href="#三、Bug产生的机型不止Vivo机型" class="headerlink" title="三、Bug产生的机型不止Vivo机型"></a>三、Bug产生的机型不止Vivo机型</h6><p>随着Bug产生的数量较多，反应用户的机型也不尽相同，魅族、OPPO、华为等机型下也有相同问题。</p>
+<h6 id="四、寻找Bug机型"><a href="#四、寻找Bug机型" class="headerlink" title="四、寻找Bug机型"></a>四、寻找Bug机型</h6><p>根据测试的情况反应，应该是Web 内部产生错误或异常，导致JsBridge模块失败，从而产生通信不了。</p>
+<p>寻找产生问题的机型（Bug复现），但很难找到问题机型。导致问题不能及时解决。</p>
+<h6 id="五、发现错误，解决问题"><a href="#五、发现错误，解决问题" class="headerlink" title="五、发现错误，解决问题"></a>五、发现错误，解决问题</h6><p>终于，苦心人太不负，找到一款Android 5.0的华为手机，存在问题。通过Chrome浏览器查看执行过程（chrome://inspect/#devices），发现问题发生在Js的一个变量的新的定义方式在一些低版本的浏览器不识别，导致Js错误，从而导致JsBridge初始化错误。修改错误，解决问题。</p>
+<h5 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h5><p>在Debug过程中，需要考虑周全，确定问题产生范围，在此条件下保持单次验证变量唯一性，不断的缩小问题范围，在没有可更改的变量情况下，需要大胆的猜想与积极的心态，寻找突破口，复现问题产生的场景，进而才能解决问题。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Bug</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/27/Hybrid-App-开发模式下的一次揪心历程/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Android-动画小知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -694,82 +780,6 @@
 
 
   
-    <article id="post-三周一总结-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/21/三周一总结-1/">三周一总结(1)</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/21/三周一总结-1/" class="archive-article-date">
-  	<time datetime="2018-01-21T12:49:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-21</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>Desire</strong><br>n:渴望；欲望；愿望；要求<br>v:渴望<br>The cat is filled with the desire to eat the fish.<br>这只猫心里充满了吃掉这条鱼的渴望。<br>音乐推荐–<a href="http://music.163.com/#/mv?id=5298186" target="_blank" rel="noopener">Desire</a></p>
-<p><strong>Sigh</strong><br>n:叹息；叹气<br>v:叹息；惋惜<br>“I wish he loved me”,she said as the sighed with disappointment.<br>“我希望他爱我”，她叹息道。<br>音乐推荐–<a href="http://music.163.com/#/song?id=29755223" target="_blank" rel="noopener">The Last Goodbye《霍比特人3：五军之战》插曲</a></p>
-<p><strong>Highlight</strong><br>vt:使突出，强调<br>n:最精彩的部分，最重要的事件<br>You should highlight all the most important parts of the text.<br>你应该标记出课文中所有最重要的部分。<br>音乐推荐–<a href="http://music.163.com/#/song?id=2867202" target="_blank" rel="noopener">Domino–Jessie J</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/21/三周一总结-1/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -879,7 +889,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color4">Bug</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -887,11 +897,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
