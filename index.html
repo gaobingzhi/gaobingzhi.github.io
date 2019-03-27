@@ -592,6 +592,105 @@
 
 
   
+    <article id="post-数据结构——字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/04/10/数据结构——字符串/">数据结构——字符串</a>
+    </h1>
+  
+
+        
+        <a href="/2018/04/10/数据结构——字符串/" class="archive-article-date">
+  	<time datetime="2018-04-10T14:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><p>####<br>请实现一个函数，将一个字符串中的每个空格替换成“%20”</p>
+<pre><code>public String replaceSpace(StringBuffer str) {
+    if(str==null){
+        return null;
+    }
+    int p1 = str.length()-1;
+    for(int i = 0;i&lt;=p1;i++){
+        if(str.charAt(i)==&apos; &apos;){
+            str.append(&quot;  &quot;);
+        }
+    }
+
+    int p2 = str.length()-1;
+    while(p1&gt;=0&amp;&amp;p2&gt;p1){
+        char pChar1 = str.charAt(p1--);
+        if(pChar1==&apos; &apos;){
+            str.setCharAt(p2--, &apos;0&apos;);
+            str.setCharAt(p2--, &apos;2&apos;);
+            str.setCharAt(p2--, &apos;%&apos;);
+        }else{
+            str.setCharAt(p2--,pChar1);
+        }
+    }
+    return str.toString();
+}
+</code></pre><p><strong>思路：</strong> 从后往前替换原则，有n个空格则需要在字符串后面添加2*n个空格，p1指向添加前的最后位置（length-1），p2指向添加后的最后位置（length-1）。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/04/10/数据结构——字符串/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Mac-OS-下修改Hosts文件的有效方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -639,83 +738,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/03/26/Mac-OS-下修改Hosts文件的有效方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-符合正太分布的随机红包算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/23/符合正太分布的随机红包算法/">符合正太分布的随机红包算法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/23/符合正太分布的随机红包算法/" class="archive-article-date">
-  	<time datetime="2018-03-23T02:51:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h4><blockquote>
-<p>java.util.Random里的nextGaussian()，生成的数值符合均值为0方差为1的高斯/正态分布，即符合标准正态分布。</p>
-</blockquote>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> getRandomMoney()&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">double</span> money = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    Random <span class="built_in">random</span> = <span class="keyword">new</span> Random();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> randomNumber = <span class="built_in">random</span>.nextInt(<span class="number">1000000</span>);</span><br><span class="line">    <span class="built_in">if</span> (randomNumber &gt; <span class="number">400000</span>) &#123;</span><br><span class="line">        <span class="built_in">return</span> money;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">if</span> (randomNumber&lt;<span class="number">4000</span>)&#123;</span><br><span class="line">        money = Math.<span class="built_in">sqrt</span>(<span class="number">10</span>) * <span class="built_in">random</span>.nextGaussian() + <span class="number">0.4</span>;</span><br><span class="line">    &#125;<span class="built_in">else</span> &#123;</span><br><span class="line">        money = Math.<span class="built_in">sqrt</span>(<span class="number">0.02</span>) * <span class="built_in">random</span>.nextGaussian() + <span class="number">0.15</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">if</span> (money &lt; <span class="number">0.01</span>) &#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="number">0.01</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    money = formatDouble1(money);</span><br><span class="line">    <span class="built_in">return</span> money;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/23/符合正太分布的随机红包算法/">展开全文 >></a>
         </p>
       
 
@@ -858,11 +880,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -870,11 +892,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">

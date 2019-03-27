@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://gaobingzhi.github.io">
-  <title>Kotlin 基础 | 黑饼的小站</title>
+  <title>数据结构——字符串 | 黑饼的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内心有点躁动的程序猿。">
-<meta name="keywords" content="android,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer">
+  <meta name="description" content="字符串操作####请实现一个函数，将一个字符串中的每个空格替换成“%20” public String replaceSpace(StringBuffer str) {     if(str==null){         return null;     }     int p1 = str.length()-1;     for(int i = 0;i&amp;lt;=p1;i++){">
+<meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Kotlin 基础">
-<meta property="og:url" content="https://gaobingzhi.github.io/2018/12/27/Kotlin-基础/index.html">
+<meta property="og:title" content="数据结构——字符串">
+<meta property="og:url" content="https://gaobingzhi.github.io/2018/04/10/数据结构——字符串/index.html">
 <meta property="og:site_name" content="黑饼的小站">
-<meta property="og:description" content="内心有点躁动的程序猿。">
+<meta property="og:description" content="字符串操作####请实现一个函数，将一个字符串中的每个空格替换成“%20” public String replaceSpace(StringBuffer str) {     if(str==null){         return null;     }     int p1 = str.length()-1;     for(int i = 0;i&amp;lt;=p1;i++){">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-27T09:01:49.000Z">
+<meta property="og:updated_time" content="2019-03-27T15:36:54.852Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Kotlin 基础">
-<meta name="twitter:description" content="内心有点躁动的程序猿。">
+<meta name="twitter:title" content="数据结构——字符串">
+<meta name="twitter:description" content="字符串操作####请实现一个函数，将一个字符串中的每个空格替换成“%20” public String replaceSpace(StringBuffer str) {     if(str==null){         return null;     }     int p1 = str.length()-1;     for(int i = 0;i&amp;lt;=p1;i++){">
   
     <link rel="alternative" href="/atom.xml" title="黑饼的小站" type="application/atom+xml">
   
@@ -155,27 +155,53 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-Kotlin-基础" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-数据结构——字符串" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      Kotlin 基础
+      数据结构——字符串
     </h1>
   
 
         
-        <a href="/2018/12/27/Kotlin-基础/" class="archive-article-date">
-  	<time datetime="2018-12-27T09:01:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-12-27</time>
+        <a href="/2018/04/10/数据结构——字符串/" class="archive-article-date">
+  	<time datetime="2018-04-10T14:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><p>####<br>请实现一个函数，将一个字符串中的每个空格替换成“%20”</p>
+<pre><code>public String replaceSpace(StringBuffer str) {
+    if(str==null){
+        return null;
+    }
+    int p1 = str.length()-1;
+    for(int i = 0;i&lt;=p1;i++){
+        if(str.charAt(i)==&apos; &apos;){
+            str.append(&quot;  &quot;);
+        }
+    }
+
+    int p2 = str.length()-1;
+    while(p1&gt;=0&amp;&amp;p2&gt;p1){
+        char pChar1 = str.charAt(p1--);
+        if(pChar1==&apos; &apos;){
+            str.setCharAt(p2--, &apos;0&apos;);
+            str.setCharAt(p2--, &apos;2&apos;);
+            str.setCharAt(p2--, &apos;%&apos;);
+        }else{
+            str.setCharAt(p2--,pChar1);
+        }
+    }
+    return str.toString();
+}
+</code></pre><p><strong>思路：</strong> 从后往前替换原则，有n个空格则需要在字符串后面添加2*n个空格，p1指向添加前的最后位置（length-1），p2指向添加后的最后位置（length-1）。</p>
+
       
 
       
@@ -183,6 +209,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -233,7 +270,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://gaobingzhi.github.io/2018/12/27/Kotlin-基础/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://gaobingzhi.github.io/2018/04/10/数据结构——字符串/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -247,18 +284,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/03/11/黑鸟APP-架构重构/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2018/04/18/符合泊松分布的随机红包算法/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          黑鸟APP 架构重构
+          符合泊松分布的随机红包算法
         
       </div>
     </a>
   
   
-    <a href="/2018/04/27/Hybrid-App-开发模式下的一次揪心历程/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Hybrid App 开发模式下的一次揪心历程</div>
+    <a href="/2018/03/26/Mac-OS-下修改Hosts文件的有效方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Mac OS 下修改Hosts文件的有效方法</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -288,7 +325,7 @@
   
 
   
-  <div id="SOHUCS" sid="Kotlin-基础"></div> 
+  <div id="SOHUCS" sid="数据结构——字符串"></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
 <script type="text/javascript">
     window.changyan.api.config({
