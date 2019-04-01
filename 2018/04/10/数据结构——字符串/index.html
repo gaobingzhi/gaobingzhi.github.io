@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://gaobingzhi.github.io">
   <title>数据结构——字符串 | 黑饼的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="字符串操作请实现一个函数，将一个字符串中的每个空格替换成“%20” public String replaceSpace(StringBuffer str) {     if(str==null){         return null;     }     int p1 = str.length()-1;     for(int i = 0;i&amp;lt;=p1;i++){         if(">
+  <meta name="description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
 <meta name="keywords" content="数据结构">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据结构——字符串">
 <meta property="og:url" content="https://gaobingzhi.github.io/2018/04/10/数据结构——字符串/index.html">
 <meta property="og:site_name" content="黑饼的小站">
-<meta property="og:description" content="字符串操作请实现一个函数，将一个字符串中的每个空格替换成“%20” public String replaceSpace(StringBuffer str) {     if(str==null){         return null;     }     int p1 = str.length()-1;     for(int i = 0;i&amp;lt;=p1;i++){         if(">
+<meta property="og:description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-01T14:13:14.993Z">
+<meta property="og:updated_time" content="2019-04-01T14:18:14.064Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据结构——字符串">
-<meta name="twitter:description" content="字符串操作请实现一个函数，将一个字符串中的每个空格替换成“%20” public String replaceSpace(StringBuffer str) {     if(str==null){         return null;     }     int p1 = str.length()-1;     for(int i = 0;i&amp;lt;=p1;i++){         if(">
+<meta name="twitter:description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
   
     <link rel="alternative" href="/atom.xml" title="黑饼的小站" type="application/atom+xml">
   
@@ -175,35 +175,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><p>请实现一个函数，将一个字符串中的每个空格替换成“%20”</p>
-<pre><code>public String replaceSpace(StringBuffer str) {
-    if(str==null){
-        return null;
-    }
-    int p1 = str.length()-1;
-    for(int i = 0;i&lt;=p1;i++){
-        if(str.charAt(i)==&apos; &apos;){
-            str.append(&quot;  &quot;);
-        }
-    }
-
-    int p2 = str.length()-1;
-    while(p1&gt;=0&amp;&amp;p2&gt;p1){
-        char pChar1 = str.charAt(p1--);
-        if(pChar1==&apos; &apos;){
-            str.setCharAt(p2--, &apos;0&apos;);
-            str.setCharAt(p2--, &apos;2&apos;);
-            str.setCharAt(p2--, &apos;%&apos;);
-        }else{
-            str.setCharAt(p2--,pChar1);
-        }
-    }
-    return str.toString();
-}
-</code></pre><p><strong>思路：</strong> 从后往前替换原则，有n个空格则需要在字符串后面添加2*n个空格，p1指向添加前的最后位置（length-1），p2指向添加后的最后位置（length-1）。</p>
+        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><blockquote>
+<p>请实现一个函数，将一个字符串中的每个空格替换成“%20”</p>
+</blockquote>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> replaceSpace(StringBuffer <span class="built_in">str</span>) &#123;</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">str</span>==<span class="keyword">null</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   	<span class="built_in">int</span> p1 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>;i&lt;=p1;i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(<span class="built_in">str</span>.charAt(i)==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.<span class="built_in">append</span>(<span class="string">"  "</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">int</span> p2 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">while</span>(p1&gt;=<span class="number">0</span>&amp;&amp;p2&gt;p1)&#123;</span><br><span class="line">           <span class="built_in">char</span> pChar1 = <span class="built_in">str</span>.charAt(p1--);</span><br><span class="line">           <span class="keyword">if</span>(pChar1==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'0'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'2'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'%'</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--,pChar1);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">str</span>.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>思路：</strong> 从后往前替换原则，有n个空格则需要在字符串后面添加2*n个空格，p1指向添加前的最后位置（length-1），p2指向添加后的最后位置（length-1）。</p>
 
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
