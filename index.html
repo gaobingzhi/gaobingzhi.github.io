@@ -156,6 +156,213 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Git—安装-提交" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/13/Git—安装-提交/">Git—安装&amp;提交</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/13/Git—安装-提交/" class="archive-article-date">
+  	<time datetime="2020-05-13T15:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—安装-amp-提交"><a href="#Git—安装-amp-提交" class="headerlink" title="Git—安装&amp;提交"></a>Git—安装&amp;提交</h4><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><ol>
+<li><a href="https://git-scm.com/" target="_blank" rel="noopener">下载</a></li>
+<li>下载后进行安装，不同操作系统有不同的安装方式，但都比较简单，这里不进行详细说明。</li>
+<li>安装后配置name、email,命令如下：</li>
+</ol>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"Your Name"</span></span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。</p>
+</blockquote>
+<h5 id="小小练习"><a href="#小小练习" class="headerlink" title="小小练习"></a>小小练习</h5><ol>
+<li>访问<a href="https://github.com/" target="_blank" rel="noopener">Github</a>。</li>
+<li>注册或登录您的账号。</li>
+<li>点击右上角的「New Repository」来新建远程仓库。</li>
+<li>填写Repository信息。</li>
+</ol>
+<h5 id="把远程仓库取到本地"><a href="#把远程仓库取到本地" class="headerlink" title="把远程仓库取到本地"></a>把远程仓库取到本地</h5><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://gaobz@bitbucket.org/gaobz/gitpractice.git</span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
+<p><em>.git 目录，就是你的本地仓库（Local Repository），你的所有版本信息都会存在这里。而 .git 所在的这个根目录，称为 Git 的工作目录（Working Directory），它保存了你当前从仓库中签出（checkout）的内容。</em></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示文件夹</span></span><br><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> AppleShowAllFiles TRUE</span><br><span class="line"><span class="comment">//隐藏文件夹</span></span><br><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> AppleShowAllFiles FALSE</span><br><span class="line"><span class="comment">//最后重启finder</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589379266269.png" alt="初次提交"></p>
+<h5 id="手动提交"><a href="#手动提交" class="headerlink" title="手动提交"></a>手动提交</h5><ol>
+<li>创建文件。</li>
+<li>Commit命令。</li>
+</ol>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">status</span> 查看工作目录当前状态</span><br><span class="line">git <span class="keyword">status</span>;</span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589381001988.png" alt="Status命令"></p>
+<h6 id="状态说明："><a href="#状态说明：" class="headerlink" title="状态说明："></a>状态说明：</h6><ol>
+<li>当前branch为 master。</li>
+<li>当前branch 没有落后于 origin/master。</li>
+<li>你有 untracked files （未追踪的文件）文件名是：HelloGit.txt。</li>
+<li>你可以使用 git add 来开始追踪文件。</li>
+</ol>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">add</span><span class="bash"> 添加追踪文件，记录到staging area（暂存区）</span></span><br><span class="line"><span class="bash">git add HelloGit.txt;</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589381571542.png" alt="add命令后的Status"></p>
+<blockquote>
+<p>所谓的 staging area，是 .git 目录下一个叫做 index 的文件（嗯，它的文件名并不叫 stage ）。你通过 add 指令暂存的内容，都会被写进这个文件里。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/13/Git—安装-提交/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—分布式版本控制系统（DVCS）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/13/Git—分布式版本控制系统（DVCS）/">Git—分布式版本控制系统（DVCS）</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/13/Git—分布式版本控制系统（DVCS）/" class="archive-article-date">
+  	<time datetime="2020-05-13T15:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—分布式版本控制系统（DVCS）"><a href="#Git—分布式版本控制系统（DVCS）" class="headerlink" title="Git—分布式版本控制系统（DVCS）"></a>Git—分布式版本控制系统（DVCS）</h4><blockquote>
+<p>分布式 VCS （Distributed VCS / DVCS）和中央式的区别在于，分布式 VCS 除了中央仓库之外，还有本地仓库：团队中每一个成员的机器上都有一份本地仓库，这个仓库里包含了所有的版本历史，或者换句话说，每个人在自己的机器上就可以提交代码、查看历史，而无需联网和中央仓库交互——当然，取而代之的，你需要和本地仓库交互。</p>
+</blockquote>
+<p><em>中央式 VCS 的中央仓库有两个主要功能：保存版本历史、同步团队代码。而在分布式 VCS 中，保存版本历史的工作转交到了每个团队成员的本地仓库中，中央仓库就只剩下了同步团队代码这一个主要任务。它的中央仓库依然也保存了历史版本，但这份历史版本更多的是作为团队间的同步中转站。</em></p>
+<h5 id="工作模型"><a href="#工作模型" class="headerlink" title="工作模型"></a>工作模型</h5><ol>
+<li>主工程师搭建项目架构，并把这些代码提交到了本地仓库。</li>
+<li>主工程师创建中央仓库，把本地仓库推送到服务器的中央仓库。</li>
+<li>其他同事把中央仓库的所有内容克隆到本地，拥有了各自的本地仓库。</li>
+<li>在这个功能开发过程中，一个人会把它的每一步改动提交到本地仓库。注意：由于本地提交无需立即上传到中央仓库，所以每一步提交不必是一个完整功能，而可以是功能中的一个步骤或块。</li>
+<li>在一个人把某个功能开发完成之后，他就可以把这个功能相关的所有提交从本地仓库推送到中央仓库。</li>
+<li>每次当有人把新的提交推送到中央仓库的时候，另外两个人就可以选择把这些提交同步到自己的机器上，并把它们和自己的本地代码合并。</li>
+</ol>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589341542618.png" alt="模型视图"></p>
+<h5 id="优点-amp-缺点"><a href="#优点-amp-缺点" class="headerlink" title="优点&amp;缺点"></a>优点&amp;缺点</h5><h6 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h6><ol>
+<li>大多数的操作可以在本地进行，所以速度更快，而且由于无需联网，所以即使不在公司甚至没有在联网，你也可以提交代码、查看历史，从而极大地减小了开发者的网络条件和物理位置的限制。</li>
+<li>由于可以提交到本地，所以你可以分步提交代码，把代码提交做得更细，而不是一个提交包含很多代码，难以 review 也难以回溯。</li>
+</ol>
+<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><ol>
+<li>由于每一个机器都有完整的本地仓库，所以初次获取项目（Git 术语：clone）的时候会比较耗时。</li>
+<li>由于每个机器都有完整的本地仓库，所以本地占用的存储比中央式 VCS 要高。</li>
+</ol>
+<blockquote>
+<p>一般情况下，程序代码都是文本形式的代码，所以体积并不算大；因文本内容自身的特点，CVS可以利用算法来把仓库的体积极大地压缩，所以程序的体积并没有想象的那么多大。</p>
+<p>但是游戏的开发中有大量的大尺寸数据和媒体文件，这些文件格式也不易压缩，所以一些大型游戏的开发会选择中央式的 VCS 来管理代码。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/13/Git—分布式版本控制系统（DVCS）/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Git—版本控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -210,68 +417,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2020/05/08/Git—版本控制/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-黑鸟APP-架构重构" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/03/11/黑鸟APP-架构重构/">黑鸟APP 架构重构</a>
-    </h1>
-  
-
-        
-        <a href="/2019/03/11/黑鸟APP-架构重构/" class="archive-article-date">
-  	<time datetime="2019-03-11T13:31:10.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-03-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2019/03/11/黑鸟APP-架构重构/">展开全文 >></a>
         </p>
       
 
@@ -691,84 +836,6 @@
 
 
   
-    <article id="post-数据结构——字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/10/数据结构——字符串/">数据结构——字符串</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/10/数据结构——字符串/" class="archive-article-date">
-  	<time datetime="2018-04-10T14:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><blockquote>
-<p>请实现一个函数，将一个字符串中的每个空格替换成“%20”</p>
-</blockquote>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> replaceSpace(StringBuffer <span class="built_in">str</span>) &#123;</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">str</span>==<span class="keyword">null</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   	<span class="built_in">int</span> p1 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>;i&lt;=p1;i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(<span class="built_in">str</span>.charAt(i)==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.<span class="built_in">append</span>(<span class="string">"  "</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">int</span> p2 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">while</span>(p1&gt;=<span class="number">0</span>&amp;&amp;p2&gt;p1)&#123;</span><br><span class="line">           <span class="built_in">char</span> pChar1 = <span class="built_in">str</span>.charAt(p1--);</span><br><span class="line">           <span class="keyword">if</span>(pChar1==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'0'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'2'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'%'</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--,pChar1);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">str</span>.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>思路：</strong> 从后往前替换原则，有n个空格则需要在字符串后面添加2*n个空格，p1指向添加前的最后位置（length-1），p2指向添加后的最后位置（length-1）。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/10/数据结构——字符串/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -874,15 +941,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Android</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -894,15 +957,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -914,11 +981,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">骑行</a>
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color3">骑行</a>
               </li>
             
             <div class="clearfix"></div>
