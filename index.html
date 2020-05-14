@@ -180,18 +180,9 @@
 <p>push 做的事是：把当前 branch 的位置（即它指向哪个 commit）上传到远端仓库，并把它的路径上的 commits 一并上传。</p>
 </blockquote>
 <p>例如，本地仓库有一个 master ，它超前了远程仓库两个提交；另外还有一个新建的 branch 叫 feature1，远程仓库还没有记载过它。具体大概像这样：</p>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589451364644.png" alt></p>
-<p>执行 git push，就会把 master 的最新位置更新到远端，并且把它的路径上的 5 6 两个 commits 上传：</p>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589451437677" alt></p>
-<p>而如果这时候切到 feature1 去后再执行一次 push，就会把 feature1 以及它的 commit 4 上传到远程仓库：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feature1</span><br><span class="line">git <span class="built_in">push</span> <span class="built_in">origin</span> feature1</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>这里的 git push 和之前有点不同：多了 origin feature1 这两个参数。其中 origin 是远程仓库的别名，是你在 git clone 的时候 Git 自动帮你起的；feature1 是远程仓库中目标 branch 的名字。这两个参数合起来指定了你要 push 到的目标仓库和目标分支，意思是「我要 push 到 origin 这个仓库的 feature1 分支」。</p>
-<p>在 Git 中（2.0 及它之后的版本），默认情况下，你用不加参数的 git push 只能上传那些之前从远端 clone 下来或者 pull 下来的分支，而如果需要 push 你本地的自己创建的分支，则需要手动指定目标仓库和目标分支（并且目标分支的名称必须和本地分支完全相同），就像上面这样。</p>
-</blockquote>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589451662342" alt></p>
-<p>在 feature1 被 push 时，远程仓库的 HEAD 并没有和本地仓库的 HEAD 一样指向 feature1。这是因为，push 的时候只会上传当前的 branch 的指向，并不会把本地的 HEAD 的指向也一起上传到远程仓库。事实上，远程仓库的 HEAD 是永远指向它的默认分支（即 master，如果不修改它的名称的话），并会随着默认分支的移动而移动的。</p>
-
+        
+          <a class="article-more-a" href="/2020/05/14/Git—push/#more">more >></a>
+        
       
 
       
@@ -266,47 +257,9 @@
       
         <h4 id="Git—HEAD、master-与-branch"><a href="#Git—HEAD、master-与-branch" class="headerlink" title="Git—HEAD、master 与 branch"></a>Git—HEAD、master 与 branch</h4><h5 id="引用：commit-的快捷方式"><a href="#引用：commit-的快捷方式" class="headerlink" title="引用：commit 的快捷方式"></a>引用：commit 的快捷方式</h5><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
 <p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589447084767.png" alt></p>
-<blockquote>
-<p>第二行的 commit 后面括号里的 HEAD -&gt; master, origin/master, origin/HEAD ，是几个指向这个 commit 的引用。在 Git 的使用中，经常会需要对指定的 commit 进行操作。每一个 commit 都有一个它唯一的指定方式——它的 SHA-1 校验和，也就是上图中每个黄色的 commit 右边的那一长串字符。两个 SHA-1 值的重复概率极低，所以你可以使用这个 SHA-1 值来指代 commit，也可以只使用它的前几位来指代它（例如第一个 9cfecfe8db39da742<em>**</em>c010262f，你使用 9cfecfe 甚至 9cfe 来指代它通常也可以），但毕竟这种没有任何含义的字符串是很难记忆的，所以 Git 提供了「引用」的机制：使用固定的字符串作为引用，指向某个 commit，作为操作 commit 时的快捷方式。</p>
-</blockquote>
-<h5 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h5><p>当前 commit 的引用</p>
-<blockquote>
-<p>上图中的当前 commit 就是第一行中的那个最新的 commit。每次当有新的 commit 的时候，工作目录自动与最新的 commit 对应；而与此同时，HEAD 也会转而指向最新的 commit。事实上，当使用 checkout、reset 等指令手动指定改变当前 commit 的时候，HEAD 也会一起跟过去。</p>
-<p>总之，当前 commit 在哪里，HEAD 就在哪里，这是一个永远自动指向当前 commit 的引用，所以你永远可以用 HEAD 来操作当前 commit。</p>
-</blockquote>
-<h5 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h5><p>HEAD 是 Git 中一个独特的引用，它是唯一的。而除了 HEAD 之外，Git 还有一种引用，叫做 branch（分支）</p>
-<blockquote>
-<p>HEAD 除了可以指向 commit，还可以指向一个 branch，当它指向某个 branch 的时候，会通过这个 branch 来间接地指向某个 commit；另外，当 HEAD 在提交时自动向前移动的时候，它会像一个拖钩一样带着它所指向的 branch 一起移动。</p>
-</blockquote>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589447974566" alt></p>
-<p><em>通过查看 log，可以对这个逻辑进行验证</em></p>
-<h5 id="master-默认-branch"><a href="#master-默认-branch" class="headerlink" title="master: 默认 branch"></a>master: 默认 branch</h5><ol>
-<li>新创建的 repository（仓库）是没有任何 commit 的。但在它创建第一个 commit 时，会把 master 指向它，并把 HEAD 指向 master。</li>
-<li>当有人使用 git clone 时，除了从远程仓库把 .git 这个仓库目录下载到工作目录中，还会 checkout （签出） master（checkout 的意思就是把某个 commit 作为当前 commit，把 HEAD 移动过去，并把工作目录的文件内容替换成这个 commit 所对应的内容）。</li>
-</ol>
-<p><em>开发团队会规定开发以 master 为核心，所有的分支都在一定程度上围绕着 master 来开发。</em><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589448412345" alt></p>
-<h5 id="branch-的创建、切换和删除"><a href="#branch-的创建、切换和删除" class="headerlink" title="branch 的创建、切换和删除"></a>branch 的创建、切换和删除</h5><h6 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h6><blockquote>
-<p>如果你想在某处创建 branch ，只需要输入一行 git branch 名称。例如你现在在 master 上：</p>
-<p>你想在这个 commit 处创建一个叫做 “feature1” 的 branch，只要输入：</p>
-</blockquote>
-<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>feature1</span><br></pre></td></tr></table></figure>
-<h6 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h6><blockquote>
-<p>不过新建的 branch 并不会自动切换，你的 HEAD 在这时依然是指向 master 的。你需要用 checkout 来主动切换到你的新 branch 去;然后 HEAD 就会指向新建的 branch 了</p>
-</blockquote>
-<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> checkout feature1</span><br></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> feature1</span><br></pre></td></tr></table></figure>
-<p><em>在切换到新的 branch 后，再次 commit 时 HEAD 就会带着新的 branch 移动了,如果你再切换到 master 去 commit，就会真正地出现分叉了</em><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589449452049" alt></p>
-<h6 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h6><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d feature1</span><br></pre></td></tr></table></figure>
-<ol>
-<li>HEAD 指向的 branch 不能删除。如果要删除 HEAD 指向的 branch，需要先用 checkout 把 HEAD 指向其他地方。</li>
-<li>由于 Git 中的 branch 只是一个引用，所以删除 branch 的操作也只会删掉这个引用，并不会删除任何的 commit。</li>
-<li>出于安全考虑，没有被合并到 master 过的 branch 在删除时会失败（因为怕你误删掉「未完成」的 branch 啊），这种情况如果你确认是要删除这个 branch ，可以把 -d 改成 -D，小写换成大写，就能删除了。</li>
-</ol>
-<h5 id="引用串"><a href="#引用串" class="headerlink" title="引用串"></a>引用串</h5><blockquote>
-<p>引用串是一个 commit 的 SHA-1 码（例：4fcacb59d669c0d6ace725bff3a6a30956dd0561），也可以是一个 branch。</p>
-<p>Git 中的 HEAD 和每一个 branch 以及其他的引用，都是以文本文件的形式存储在本地仓库 .git 目录中，而 Git 在工作的时候，就是通过这些文本文件的内容来判断这些所谓的「引用」是指向谁的。</p>
-</blockquote>
-
+        
+          <a class="article-more-a" href="/2020/05/14/Git—HEAD、master 与 branch/#more">more >></a>
+        
       
 
       
@@ -382,22 +335,9 @@
         <h4 id="Git—基本工作模型"><a href="#Git—基本工作模型" class="headerlink" title="Git—基本工作模型"></a>Git—基本工作模型</h4><blockquote>
 <p>团队协同工作并不像前面单人的操作流程，同事也会add、commit、push，这会让git的协同工作流程变得不再简单。</p>
 </blockquote>
-<h5 id="把别人的新提交拿到本地"><a href="#把别人的新提交拿到本地" class="headerlink" title="把别人的新提交拿到本地"></a>把别人的新提交拿到本地</h5><h6 id="模拟操作"><a href="#模拟操作" class="headerlink" title="模拟操作"></a>模拟操作</h6><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/geluo/git-practice.git practice2</span><br></pre></td></tr></table></figure>
-<h6 id="修改HelloGit文件"><a href="#修改HelloGit文件" class="headerlink" title="修改HelloGit文件"></a>修改HelloGit文件</h6><ol>
-<li>执行git add。</li>
-<li>执行git commit。</li>
-<li>执行git push。</li>
-</ol>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589443427781.png" alt></p>
-<p>GitHub 上有了同事的新代码以后，你就可以变回自己，把「他」刚 push 上去的代码取到你的仓库了。首先，切回 “自己” 的目录：</p>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589443796181.png" alt></p>
-<p><em>现在本地仓库又是最新的啦</em></p>
-<h5 id="push-发生冲突"><a href="#push-发生冲突" class="headerlink" title="push 发生冲突"></a>push 发生冲突</h5><blockquote>
-<p>在现实的团队开发中，全队是同时并行开发的，所以必然会出现当一人 push 代码时，中央仓库已经被其他同事先一步 push 了的情况。</p>
-</blockquote>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589444853258.png" alt><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589445689345.png" alt></p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//取消<span class="built_in">merge</span></span><br><span class="line">git <span class="built_in">merge</span> <span class="comment">--abort</span></span><br></pre></td></tr></table></figure>
+        
+          <a class="article-more-a" href="/2020/05/14/Git—基本工作模型/#more">more >></a>
+        
       
 
       
@@ -479,34 +419,9 @@
 <blockquote>
 <p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。</p>
 </blockquote>
-<h5 id="小小练习"><a href="#小小练习" class="headerlink" title="小小练习"></a>小小练习</h5><ol>
-<li>访问<a href="https://github.com/" target="_blank" rel="noopener">Github</a>。</li>
-<li>注册或登录您的账号。</li>
-<li>点击右上角的「New Repository」来新建远程仓库。</li>
-<li>填写Repository信息。</li>
-</ol>
-<h5 id="把远程仓库取到本地"><a href="#把远程仓库取到本地" class="headerlink" title="把远程仓库取到本地"></a>把远程仓库取到本地</h5><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://gaobz@bitbucket.org/gaobz/gitpractice.git</span><br><span class="line">git log</span><br></pre></td></tr></table></figure>
-<p><em>.git 目录，就是你的本地仓库（Local Repository），你的所有版本信息都会存在这里。而 .git 所在的这个根目录，称为 Git 的工作目录（Working Directory），它保存了你当前从仓库中签出（checkout）的内容。</em></p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//显示文件夹</span></span><br><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> AppleShowAllFiles TRUE</span><br><span class="line"><span class="comment">//隐藏文件夹</span></span><br><span class="line">defaults write com<span class="selector-class">.apple</span><span class="selector-class">.finder</span> AppleShowAllFiles FALSE</span><br><span class="line"><span class="comment">//最后重启finder</span></span><br><span class="line">killall Finder</span><br></pre></td></tr></table></figure>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589379266269.png" alt="初次提交"></p>
-<h5 id="手动提交"><a href="#手动提交" class="headerlink" title="手动提交"></a>手动提交</h5><ol>
-<li>创建文件。</li>
-<li>Commit命令。</li>
-</ol>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">status</span> 查看工作目录当前状态</span><br><span class="line">git <span class="keyword">status</span>;</span><br></pre></td></tr></table></figure>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589381001988.png" alt="Status命令"></p>
-<h6 id="状态说明："><a href="#状态说明：" class="headerlink" title="状态说明："></a>状态说明：</h6><ol>
-<li>当前branch为 master。</li>
-<li>当前branch 没有落后于 origin/master。</li>
-<li>你有 untracked files （未追踪的文件）文件名是：HelloGit.txt。</li>
-<li>你可以使用 git add 来开始追踪文件。</li>
-</ol>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">add</span><span class="bash"> 添加追踪文件，记录到staging area（暂存区）</span></span><br><span class="line"><span class="bash">git add HelloGit.txt;</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589381571542.png" alt="add命令后的Status"></p>
-<blockquote>
-<p>所谓的 staging area，是 .git 目录下一个叫做 index 的文件（嗯，它的文件名并不叫 stage ）。你通过 add 指令暂存的内容，都会被写进这个文件里。</p>
-</blockquote>
-
+        
+          <a class="article-more-a" href="/2020/05/13/Git—安装-提交/#more">more >></a>
+        
       
 
       
@@ -583,28 +498,9 @@
 <p>分布式 VCS （Distributed VCS / DVCS）和中央式的区别在于，分布式 VCS 除了中央仓库之外，还有本地仓库：团队中每一个成员的机器上都有一份本地仓库，这个仓库里包含了所有的版本历史，或者换句话说，每个人在自己的机器上就可以提交代码、查看历史，而无需联网和中央仓库交互——当然，取而代之的，你需要和本地仓库交互。</p>
 </blockquote>
 <p><em>中央式 VCS 的中央仓库有两个主要功能：保存版本历史、同步团队代码。而在分布式 VCS 中，保存版本历史的工作转交到了每个团队成员的本地仓库中，中央仓库就只剩下了同步团队代码这一个主要任务。它的中央仓库依然也保存了历史版本，但这份历史版本更多的是作为团队间的同步中转站。</em></p>
-<h5 id="工作模型"><a href="#工作模型" class="headerlink" title="工作模型"></a>工作模型</h5><ol>
-<li>主工程师搭建项目架构，并把这些代码提交到了本地仓库。</li>
-<li>主工程师创建中央仓库，把本地仓库推送到服务器的中央仓库。</li>
-<li>其他同事把中央仓库的所有内容克隆到本地，拥有了各自的本地仓库。</li>
-<li>在这个功能开发过程中，一个人会把它的每一步改动提交到本地仓库。注意：由于本地提交无需立即上传到中央仓库，所以每一步提交不必是一个完整功能，而可以是功能中的一个步骤或块。</li>
-<li>在一个人把某个功能开发完成之后，他就可以把这个功能相关的所有提交从本地仓库推送到中央仓库。</li>
-<li>每次当有人把新的提交推送到中央仓库的时候，另外两个人就可以选择把这些提交同步到自己的机器上，并把它们和自己的本地代码合并。</li>
-</ol>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589341542618.png" alt="模型视图"></p>
-<h5 id="优点-amp-缺点"><a href="#优点-amp-缺点" class="headerlink" title="优点&amp;缺点"></a>优点&amp;缺点</h5><h6 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h6><ol>
-<li>大多数的操作可以在本地进行，所以速度更快，而且由于无需联网，所以即使不在公司甚至没有在联网，你也可以提交代码、查看历史，从而极大地减小了开发者的网络条件和物理位置的限制。</li>
-<li>由于可以提交到本地，所以你可以分步提交代码，把代码提交做得更细，而不是一个提交包含很多代码，难以 review 也难以回溯。</li>
-</ol>
-<h6 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h6><ol>
-<li>由于每一个机器都有完整的本地仓库，所以初次获取项目（Git 术语：clone）的时候会比较耗时。</li>
-<li>由于每个机器都有完整的本地仓库，所以本地占用的存储比中央式 VCS 要高。</li>
-</ol>
-<blockquote>
-<p>一般情况下，程序代码都是文本形式的代码，所以体积并不算大；因文本内容自身的特点，CVS可以利用算法来把仓库的体积极大地压缩，所以程序的体积并没有想象的那么多大。</p>
-<p>但是游戏的开发中有大量的大尺寸数据和媒体文件，这些文件格式也不易压缩，所以一些大型游戏的开发会选择中央式的 VCS 来管理代码。</p>
-</blockquote>
-
+        
+          <a class="article-more-a" href="/2020/05/13/Git—分布式版本控制系统（DVCS）/#more">more >></a>
+        
       
 
       
@@ -1015,19 +911,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">英语</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
               </li>
              
               <li class="article-tag-list-item">
