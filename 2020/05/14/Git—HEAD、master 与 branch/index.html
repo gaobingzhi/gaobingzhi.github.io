@@ -6,19 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://gaobingzhi.github.io">
-  <title>Tag: beauty | 黑饼的小站</title>
+  <title>Git—HEAD、master 与 branch | 黑饼的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="内心有点躁动的程序猿。">
-<meta name="keywords" content="android,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer">
-<meta property="og:type" content="website">
-<meta property="og:title" content="黑饼的小站">
-<meta property="og:url" content="https://gaobingzhi.github.io/tags/beauty/index.html">
+  <meta name="description" content="Git—HEAD、master 与 branch引用：commit 的快捷方式1git log   第二行的 commit 后面括号里的 HEAD -&amp;gt; master, origin/master, origin/HEAD ，是几个指向这个 commit 的引用。在 Git 的使用中，经常会需要对指定的 commit 进行操作。每一个 commit 都有一个它唯一的指定方式——它的 SHA-">
+<meta name="keywords" content="Git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git—HEAD、master 与 branch">
+<meta property="og:url" content="https://gaobingzhi.github.io/2020/05/14/Git—HEAD、master 与 branch/index.html">
 <meta property="og:site_name" content="黑饼的小站">
-<meta property="og:description" content="内心有点躁动的程序猿。">
+<meta property="og:description" content="Git—HEAD、master 与 branch引用：commit 的快捷方式1git log   第二行的 commit 后面括号里的 HEAD -&amp;gt; master, origin/master, origin/HEAD ，是几个指向这个 commit 的引用。在 Git 的使用中，经常会需要对指定的 commit 进行操作。每一个 commit 都有一个它唯一的指定方式——它的 SHA-">
 <meta property="og:locale" content="default">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589447084767.png">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589447974566">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589448412345">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589449452049">
+<meta property="og:updated_time" content="2020-05-14T14:49:34.956Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="黑饼的小站">
-<meta name="twitter:description" content="内心有点躁动的程序猿。">
+<meta name="twitter:title" content="Git—HEAD、master 与 branch">
+<meta name="twitter:description" content="Git—HEAD、master 与 branch引用：commit 的快捷方式1git log   第二行的 commit 后面括号里的 HEAD -&amp;gt; master, origin/master, origin/HEAD ，是几个指向这个 commit 的引用。在 Git 的使用中，经常会需要对指定的 commit 进行操作。每一个 commit 都有一个它唯一的指定方式——它的 SHA-">
+<meta name="twitter:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589447084767.png">
   
     <link rel="alternative" href="/atom.xml" title="黑饼的小站" type="application/atom+xml">
   
@@ -154,60 +160,237 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Git—HEAD、master 与 branch" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/12/beauty/" class="archive-article-date">
-  	<time datetime="2018-03-12T11:25:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-12</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/12/beauty/">beauty</a>
+    <h1 class="article-title" itemprop="name">
+      Git—HEAD、master 与 branch
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/05/14/Git—HEAD、master 与 branch/" class="archive-article-date">
+  	<time datetime="2020-05-14T03:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—HEAD、master-与-branch"><a href="#Git—HEAD、master-与-branch" class="headerlink" title="Git—HEAD、master 与 branch"></a>Git—HEAD、master 与 branch</h4><h5 id="引用：commit-的快捷方式"><a href="#引用：commit-的快捷方式" class="headerlink" title="引用：commit 的快捷方式"></a>引用：commit 的快捷方式</h5><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589447084767.png" alt></p>
+<blockquote>
+<p>第二行的 commit 后面括号里的 HEAD -&gt; master, origin/master, origin/HEAD ，是几个指向这个 commit 的引用。在 Git 的使用中，经常会需要对指定的 commit 进行操作。每一个 commit 都有一个它唯一的指定方式——它的 SHA-1 校验和，也就是上图中每个黄色的 commit 右边的那一长串字符。两个 SHA-1 值的重复概率极低，所以你可以使用这个 SHA-1 值来指代 commit，也可以只使用它的前几位来指代它（例如第一个 9cfecfe8db39da742<em>**</em>c010262f，你使用 9cfecfe 甚至 9cfe 来指代它通常也可以），但毕竟这种没有任何含义的字符串是很难记忆的，所以 Git 提供了「引用」的机制：使用固定的字符串作为引用，指向某个 commit，作为操作 commit 时的快捷方式。</p>
+</blockquote>
+<h5 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h5><p>当前 commit 的引用</p>
+<blockquote>
+<p>上图中的当前 commit 就是第一行中的那个最新的 commit。每次当有新的 commit 的时候，工作目录自动与最新的 commit 对应；而与此同时，HEAD 也会转而指向最新的 commit。事实上，当使用 checkout、reset 等指令手动指定改变当前 commit 的时候，HEAD 也会一起跟过去。</p>
+<p>总之，当前 commit 在哪里，HEAD 就在哪里，这是一个永远自动指向当前 commit 的引用，所以你永远可以用 HEAD 来操作当前 commit。</p>
+</blockquote>
+<h5 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h5><p>HEAD 是 Git 中一个独特的引用，它是唯一的。而除了 HEAD 之外，Git 还有一种引用，叫做 branch（分支）</p>
+<blockquote>
+<p>HEAD 除了可以指向 commit，还可以指向一个 branch，当它指向某个 branch 的时候，会通过这个 branch 来间接地指向某个 commit；另外，当 HEAD 在提交时自动向前移动的时候，它会像一个拖钩一样带着它所指向的 branch 一起移动。</p>
+</blockquote>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589447974566" alt></p>
+<p><em>通过查看 log，可以对这个逻辑进行验证</em></p>
+<h5 id="master-默认-branch"><a href="#master-默认-branch" class="headerlink" title="master: 默认 branch"></a>master: 默认 branch</h5><ol>
+<li>新创建的 repository（仓库）是没有任何 commit 的。但在它创建第一个 commit 时，会把 master 指向它，并把 HEAD 指向 master。</li>
+<li>当有人使用 git clone 时，除了从远程仓库把 .git 这个仓库目录下载到工作目录中，还会 checkout （签出） master（checkout 的意思就是把某个 commit 作为当前 commit，把 HEAD 移动过去，并把工作目录的文件内容替换成这个 commit 所对应的内容）。</li>
+</ol>
+<p><em>开发团队会规定开发以 master 为核心，所有的分支都在一定程度上围绕着 master 来开发。</em><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589448412345" alt></p>
+<h5 id="branch-的创建、切换和删除"><a href="#branch-的创建、切换和删除" class="headerlink" title="branch 的创建、切换和删除"></a>branch 的创建、切换和删除</h5><h6 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h6><blockquote>
+<p>如果你想在某处创建 branch ，只需要输入一行 git branch 名称。例如你现在在 master 上：</p>
+<p>你想在这个 commit 处创建一个叫做 “feature1” 的 branch，只要输入：</p>
+</blockquote>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>feature1</span><br></pre></td></tr></table></figure>
+<h6 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h6><blockquote>
+<p>不过新建的 branch 并不会自动切换，你的 HEAD 在这时依然是指向 master 的。你需要用 checkout 来主动切换到你的新 branch 去;然后 HEAD 就会指向新建的 branch 了</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> checkout feature1</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> feature1</span><br></pre></td></tr></table></figure>
+<p><em>在切换到新的 branch 后，再次 commit 时 HEAD 就会带着新的 branch 移动了,如果你再切换到 master 去 commit，就会真正地出现分叉了</em><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589449452049" alt></p>
+<h6 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h6><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d feature1</span><br></pre></td></tr></table></figure>
+<ol>
+<li>HEAD 指向的 branch 不能删除。如果要删除 HEAD 指向的 branch，需要先用 checkout 把 HEAD 指向其他地方。</li>
+<li>由于 Git 中的 branch 只是一个引用，所以删除 branch 的操作也只会删掉这个引用，并不会删除任何的 commit。</li>
+<li>出于安全考虑，没有被合并到 master 过的 branch 在删除时会失败（因为怕你误删掉「未完成」的 branch 啊），这种情况如果你确认是要删除这个 branch ，可以把 -d 改成 -D，小写换成大写，就能删除了。</li>
+</ol>
+<h5 id="引用串"><a href="#引用串" class="headerlink" title="引用串"></a>引用串</h5><blockquote>
+<p>引用串是一个 commit 的 SHA-1 码（例：4fcacb59d669c0d6ace725bff3a6a30956dd0561），也可以是一个 branch。</p>
+<p>Git 中的 HEAD 和每一个 branch 以及其他的引用，都是以文本文件的形式存储在本地仓库 .git 目录中，而 Git 在工作的时候，就是通过这些文本文件的内容来判断这些所谓的「引用」是指向谁的。</p>
+</blockquote>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/alipay.png">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/img/weixin.png">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">beauty</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=https://gaobingzhi.github.io/2020/05/14/Git—HEAD、master 与 branch/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2020/05/14/Git—push/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Git—push
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2020/05/14/Git—基本工作模型/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git—基本工作模型</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+  <div id="SOHUCS" sid="Git—HEAD、master 与 branch"></div> 
+<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
+<script type="text/javascript">
+    window.changyan.api.config({
+        appid: "cytpVqR55",
+        conf: "26eabd511b57c6e7d09818e1ffd124d6"
+    });
+</script>
+
+  
+
+  
+
+  
 
 
           </div>
@@ -238,9 +421,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

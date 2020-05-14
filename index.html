@@ -156,6 +156,300 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Git—push" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/Git—push/">Git—push</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/Git—push/" class="archive-article-date">
+  	<time datetime="2020-05-14T04:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—push"><a href="#Git—push" class="headerlink" title="Git—push"></a>Git—push</h4><blockquote>
+<p>push 做的事是：把当前 branch 的位置（即它指向哪个 commit）上传到远端仓库，并把它的路径上的 commits 一并上传。</p>
+</blockquote>
+<p>例如，本地仓库有一个 master ，它超前了远程仓库两个提交；另外还有一个新建的 branch 叫 feature1，远程仓库还没有记载过它。具体大概像这样：</p>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589451364644.png" alt></p>
+<p>执行 git push，就会把 master 的最新位置更新到远端，并且把它的路径上的 5 6 两个 commits 上传：</p>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589451437677" alt></p>
+<p>而如果这时候切到 feature1 去后再执行一次 push，就会把 feature1 以及它的 commit 4 上传到远程仓库：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git checkout feature1</span><br><span class="line">git <span class="built_in">push</span> <span class="built_in">origin</span> feature1</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>这里的 git push 和之前有点不同：多了 origin feature1 这两个参数。其中 origin 是远程仓库的别名，是你在 git clone 的时候 Git 自动帮你起的；feature1 是远程仓库中目标 branch 的名字。这两个参数合起来指定了你要 push 到的目标仓库和目标分支，意思是「我要 push 到 origin 这个仓库的 feature1 分支」。</p>
+<p>在 Git 中（2.0 及它之后的版本），默认情况下，你用不加参数的 git push 只能上传那些之前从远端 clone 下来或者 pull 下来的分支，而如果需要 push 你本地的自己创建的分支，则需要手动指定目标仓库和目标分支（并且目标分支的名称必须和本地分支完全相同），就像上面这样。</p>
+</blockquote>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589451662342" alt></p>
+<p>在 feature1 被 push 时，远程仓库的 HEAD 并没有和本地仓库的 HEAD 一样指向 feature1。这是因为，push 的时候只会上传当前的 branch 的指向，并不会把本地的 HEAD 的指向也一起上传到远程仓库。事实上，远程仓库的 HEAD 是永远指向它的默认分支（即 master，如果不修改它的名称的话），并会随着默认分支的移动而移动的。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/Git—push/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—HEAD、master 与 branch" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/Git—HEAD、master 与 branch/">Git—HEAD、master 与 branch</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/Git—HEAD、master 与 branch/" class="archive-article-date">
+  	<time datetime="2020-05-14T03:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—HEAD、master-与-branch"><a href="#Git—HEAD、master-与-branch" class="headerlink" title="Git—HEAD、master 与 branch"></a>Git—HEAD、master 与 branch</h4><h5 id="引用：commit-的快捷方式"><a href="#引用：commit-的快捷方式" class="headerlink" title="引用：commit 的快捷方式"></a>引用：commit 的快捷方式</h5><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589447084767.png" alt></p>
+<blockquote>
+<p>第二行的 commit 后面括号里的 HEAD -&gt; master, origin/master, origin/HEAD ，是几个指向这个 commit 的引用。在 Git 的使用中，经常会需要对指定的 commit 进行操作。每一个 commit 都有一个它唯一的指定方式——它的 SHA-1 校验和，也就是上图中每个黄色的 commit 右边的那一长串字符。两个 SHA-1 值的重复概率极低，所以你可以使用这个 SHA-1 值来指代 commit，也可以只使用它的前几位来指代它（例如第一个 9cfecfe8db39da742<em>**</em>c010262f，你使用 9cfecfe 甚至 9cfe 来指代它通常也可以），但毕竟这种没有任何含义的字符串是很难记忆的，所以 Git 提供了「引用」的机制：使用固定的字符串作为引用，指向某个 commit，作为操作 commit 时的快捷方式。</p>
+</blockquote>
+<h5 id="HEAD"><a href="#HEAD" class="headerlink" title="HEAD"></a>HEAD</h5><p>当前 commit 的引用</p>
+<blockquote>
+<p>上图中的当前 commit 就是第一行中的那个最新的 commit。每次当有新的 commit 的时候，工作目录自动与最新的 commit 对应；而与此同时，HEAD 也会转而指向最新的 commit。事实上，当使用 checkout、reset 等指令手动指定改变当前 commit 的时候，HEAD 也会一起跟过去。</p>
+<p>总之，当前 commit 在哪里，HEAD 就在哪里，这是一个永远自动指向当前 commit 的引用，所以你永远可以用 HEAD 来操作当前 commit。</p>
+</blockquote>
+<h5 id="branch"><a href="#branch" class="headerlink" title="branch"></a>branch</h5><p>HEAD 是 Git 中一个独特的引用，它是唯一的。而除了 HEAD 之外，Git 还有一种引用，叫做 branch（分支）</p>
+<blockquote>
+<p>HEAD 除了可以指向 commit，还可以指向一个 branch，当它指向某个 branch 的时候，会通过这个 branch 来间接地指向某个 commit；另外，当 HEAD 在提交时自动向前移动的时候，它会像一个拖钩一样带着它所指向的 branch 一起移动。</p>
+</blockquote>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589447974566" alt></p>
+<p><em>通过查看 log，可以对这个逻辑进行验证</em></p>
+<h5 id="master-默认-branch"><a href="#master-默认-branch" class="headerlink" title="master: 默认 branch"></a>master: 默认 branch</h5><ol>
+<li>新创建的 repository（仓库）是没有任何 commit 的。但在它创建第一个 commit 时，会把 master 指向它，并把 HEAD 指向 master。</li>
+<li>当有人使用 git clone 时，除了从远程仓库把 .git 这个仓库目录下载到工作目录中，还会 checkout （签出） master（checkout 的意思就是把某个 commit 作为当前 commit，把 HEAD 移动过去，并把工作目录的文件内容替换成这个 commit 所对应的内容）。</li>
+</ol>
+<p><em>开发团队会规定开发以 master 为核心，所有的分支都在一定程度上围绕着 master 来开发。</em><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589448412345" alt></p>
+<h5 id="branch-的创建、切换和删除"><a href="#branch-的创建、切换和删除" class="headerlink" title="branch 的创建、切换和删除"></a>branch 的创建、切换和删除</h5><h6 id="创建"><a href="#创建" class="headerlink" title="创建"></a>创建</h6><blockquote>
+<p>如果你想在某处创建 branch ，只需要输入一行 git branch 名称。例如你现在在 master 上：</p>
+<p>你想在这个 commit 处创建一个叫做 “feature1” 的 branch，只要输入：</p>
+</blockquote>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>feature1</span><br></pre></td></tr></table></figure>
+<h6 id="切换"><a href="#切换" class="headerlink" title="切换"></a>切换</h6><blockquote>
+<p>不过新建的 branch 并不会自动切换，你的 HEAD 在这时依然是指向 master 的。你需要用 checkout 来主动切换到你的新 branch 去;然后 HEAD 就会指向新建的 branch 了</p>
+</blockquote>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git</span> checkout feature1</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -<span class="selector-tag">b</span> feature1</span><br></pre></td></tr></table></figure>
+<p><em>在切换到新的 branch 后，再次 commit 时 HEAD 就会带着新的 branch 移动了,如果你再切换到 master 去 commit，就会真正地出现分叉了</em><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589449452049" alt></p>
+<h6 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h6><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">branch </span>-d feature1</span><br></pre></td></tr></table></figure>
+<ol>
+<li>HEAD 指向的 branch 不能删除。如果要删除 HEAD 指向的 branch，需要先用 checkout 把 HEAD 指向其他地方。</li>
+<li>由于 Git 中的 branch 只是一个引用，所以删除 branch 的操作也只会删掉这个引用，并不会删除任何的 commit。</li>
+<li>出于安全考虑，没有被合并到 master 过的 branch 在删除时会失败（因为怕你误删掉「未完成」的 branch 啊），这种情况如果你确认是要删除这个 branch ，可以把 -d 改成 -D，小写换成大写，就能删除了。</li>
+</ol>
+<h5 id="引用串"><a href="#引用串" class="headerlink" title="引用串"></a>引用串</h5><blockquote>
+<p>引用串是一个 commit 的 SHA-1 码（例：4fcacb59d669c0d6ace725bff3a6a30956dd0561），也可以是一个 branch。</p>
+<p>Git 中的 HEAD 和每一个 branch 以及其他的引用，都是以文本文件的形式存储在本地仓库 .git 目录中，而 Git 在工作的时候，就是通过这些文本文件的内容来判断这些所谓的「引用」是指向谁的。</p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/Git—HEAD、master 与 branch/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—基本工作模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/Git—基本工作模型/">Git—基本工作模型</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/Git—基本工作模型/" class="archive-article-date">
+  	<time datetime="2020-05-14T02:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—基本工作模型"><a href="#Git—基本工作模型" class="headerlink" title="Git—基本工作模型"></a>Git—基本工作模型</h4><blockquote>
+<p>团队协同工作并不像前面单人的操作流程，同事也会add、commit、push，这会让git的协同工作流程变得不再简单。</p>
+</blockquote>
+<h5 id="把别人的新提交拿到本地"><a href="#把别人的新提交拿到本地" class="headerlink" title="把别人的新提交拿到本地"></a>把别人的新提交拿到本地</h5><h6 id="模拟操作"><a href="#模拟操作" class="headerlink" title="模拟操作"></a>模拟操作</h6><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">clone</span> <span class="title">https</span>://github.com/geluo/git-practice.git practice2</span><br></pre></td></tr></table></figure>
+<h6 id="修改HelloGit文件"><a href="#修改HelloGit文件" class="headerlink" title="修改HelloGit文件"></a>修改HelloGit文件</h6><ol>
+<li>执行git add。</li>
+<li>执行git commit。</li>
+<li>执行git push。</li>
+</ol>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589443427781.png" alt></p>
+<p>GitHub 上有了同事的新代码以后，你就可以变回自己，把「他」刚 push 上去的代码取到你的仓库了。首先，切回 “自己” 的目录：</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git pull</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589443796181.png" alt></p>
+<p><em>现在本地仓库又是最新的啦</em></p>
+<h5 id="push-发生冲突"><a href="#push-发生冲突" class="headerlink" title="push 发生冲突"></a>push 发生冲突</h5><blockquote>
+<p>在现实的团队开发中，全队是同时并行开发的，所以必然会出现当一人 push 代码时，中央仓库已经被其他同事先一步 push 了的情况。</p>
+</blockquote>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589444853258.png" alt><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589445689345.png" alt></p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//取消<span class="built_in">merge</span></span><br><span class="line">git <span class="built_in">merge</span> <span class="comment">--abort</span></span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/Git—基本工作模型/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-Git—安装-提交" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -604,238 +898,6 @@
 
 
   
-    <article id="post-Android-UI小知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/22/Android-UI小知识/">Android UI小知识</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/22/Android-UI小知识/" class="archive-article-date">
-  	<time datetime="2018-04-22T14:44:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="常用控件"><a href="#常用控件" class="headerlink" title="常用控件"></a>常用控件</h4><h6 id="1-ProgressBar-样式问题"><a href="#1-ProgressBar-样式问题" class="headerlink" title="1.ProgressBar 样式问题"></a>1.ProgressBar 样式问题</h6><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ProgressBar</span><br><span class="line">       android:<span class="attribute">id</span>=<span class="string">"@+id/progress_bar"</span></span><br><span class="line">       android:<span class="attribute">layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">       android:<span class="attribute">layout_height</span>=<span class="string">"wrap_content"</span> </span><br><span class="line">       <span class="attribute">style</span>=<span class="string">"?android:progressBarStyleHorizontal"</span></span><br><span class="line">       android:<span class="attribute">max</span>=<span class="string">"100"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<p><code>style=&quot;?android:progressBarStyleHorizontal&quot;</code>为系统样式，设置横向进度样式。</p>
-        
-          <a class="article-more-a" href="/2018/04/22/Android-UI小知识/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/22/Android-UI小知识/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-符合泊松分布的随机红包算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/18/符合泊松分布的随机红包算法/">符合泊松分布的随机红包算法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/18/符合泊松分布的随机红包算法/" class="archive-article-date">
-  	<time datetime="2018-04-18T06:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h4><blockquote>
-<p>根据期望值产生随机数，符合泊松分布</p>
-</blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getPossionVariable</span><span class="params">(<span class="keyword">double</span> lambda)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">double</span> y = Math.random(), cdf = getPossionProbability(x, lambda);</span><br><span class="line">        <span class="keyword">while</span> (cdf &lt; y) &#123;</span><br><span class="line">            x++;</span><br><span class="line">            cdf += getPossionProbability(x, lambda);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">double</span> getPossionProbability(<span class="keyword">int</span> k, <span class="keyword">double</span> lambda) &#123;</span><br><span class="line">        <span class="keyword">double</span> c = Math.exp(-lambda), <span class="keyword">sum</span> = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">            <span class="keyword">sum</span> *= lambda / i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">sum</span> * c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/18/符合泊松分布的随机红包算法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-数据结构——链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/11/数据结构——链表/">数据结构——链表</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/11/数据结构——链表/" class="archive-article-date">
-  	<time datetime="2018-04-11T15:03:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <blockquote>
-<p>链表反转</p>
-</blockquote>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Node reversed_linkedlist() &#123;</span><br><span class="line">        MyLinkedList list = <span class="keyword">new</span> <span class="type">MyLinkedList</span>();</span><br><span class="line">        Node head = list.init();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span> || head.next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用三个节指针</span></span><br><span class="line">        Node current = head;</span><br><span class="line">        Node <span class="keyword">new</span><span class="type">Head</span> = <span class="literal">null</span>;</span><br><span class="line">        Node next = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(current != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">//先将当前节点的下个节点保存</span></span><br><span class="line">            next = current.next;</span><br><span class="line">            current.next = <span class="keyword">new</span><span class="type">Head</span>; <span class="comment">//将原来的链表断链,将current的下一个结点指向新链表的头结点</span></span><br><span class="line">            <span class="keyword">new</span><span class="type">Head</span> = current; <span class="comment">//将current设为新表头</span></span><br><span class="line">            current = next; <span class="comment">//将之前保存的next设为下一个节点</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span><span class="type">Head</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>思路：</strong>一个指针为当前节点，一个指针指向当前节点的下一个节点，另外一个节点则指向新链表表头从而保存结果。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/11/数据结构——链表/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -941,15 +1003,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Android</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Git</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">Android</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Bug</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -961,7 +1027,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -969,15 +1035,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color3">音乐</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">音乐</a>
               </li>
              
               <li class="article-tag-list-item">
