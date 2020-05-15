@@ -156,6 +156,310 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Mac-OS-下修改Hosts文件的有效方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/26/Mac-OS-下修改Hosts文件的有效方法/">Mac OS 下修改Hosts文件的有效方法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/26/Mac-OS-下修改Hosts文件的有效方法/" class="archive-article-date">
+  	<time datetime="2018-03-26T06:37:27.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="使用nano-编辑器修改"><a href="#使用nano-编辑器修改" class="headerlink" title="使用nano 编辑器修改"></a>使用nano 编辑器修改</h5><p>在Termial中执行以下命令：</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano <span class="regexp">/etc/</span>hosts</span><br></pre></td></tr></table></figure>
+<p>输入命令后输入认证密码，密码输入后回车换行，打开hosts文件，按照你的需要对该文件进行编辑，编辑完毕后按 command+o 保存，出现”File Name to Write:/etc/hosts”的时候按回车确认，再按 command+x 退出即可。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Mac</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/26/Mac-OS-下修改Hosts文件的有效方法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-符合正太分布的随机红包算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/23/符合正太分布的随机红包算法/">符合正太分布的随机红包算法</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/23/符合正太分布的随机红包算法/" class="archive-article-date">
+  	<time datetime="2018-03-23T02:51:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-23</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h4><blockquote>
+<p>java.util.Random里的nextGaussian()，生成的数值符合均值为0方差为1的高斯/正态分布，即符合标准正态分布。</p>
+</blockquote>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> getRandomMoney()&#123;</span><br><span class="line">  </span><br><span class="line">    <span class="keyword">double</span> money = <span class="number">0</span>;</span><br><span class="line">    </span><br><span class="line">    Random <span class="built_in">random</span> = <span class="keyword">new</span> Random();</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">int</span> randomNumber = <span class="built_in">random</span>.nextInt(<span class="number">1000000</span>);</span><br><span class="line">    <span class="built_in">if</span> (randomNumber &gt; <span class="number">400000</span>) &#123;</span><br><span class="line">        <span class="built_in">return</span> money;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">if</span> (randomNumber&lt;<span class="number">4000</span>)&#123;</span><br><span class="line">        money = Math.<span class="built_in">sqrt</span>(<span class="number">10</span>) * <span class="built_in">random</span>.nextGaussian() + <span class="number">0.4</span>;</span><br><span class="line">    &#125;<span class="built_in">else</span> &#123;</span><br><span class="line">        money = Math.<span class="built_in">sqrt</span>(<span class="number">0.02</span>) * <span class="built_in">random</span>.nextGaussian() + <span class="number">0.15</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">if</span> (money &lt; <span class="number">0.01</span>) &#123;</span><br><span class="line">        <span class="built_in">return</span> <span class="number">0.01</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    money = formatDouble1(money);</span><br><span class="line">    <span class="built_in">return</span> money;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/23/符合正太分布的随机红包算法/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-beauty" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/03/12/beauty/">beauty</a>
+    </h1>
+  
+
+        
+        <a href="/2018/03/12/beauty/" class="archive-article-date">
+  	<time datetime="2018-03-12T11:25:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-12</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://raw.githubusercontent.com/gaobingzhi/Blog-Back-Up/master/ridePhotos/qixingyulu.jpg" alt="美图"></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">beauty</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/03/12/beauty/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-三周一总结-2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/25/三周一总结-2/">三周一总结(2)</a>
+    </h1>
+  
+
+        
+        <a href="/2018/01/25/三周一总结-2/" class="archive-article-date">
+  	<time datetime="2018-01-25T12:50:49.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-25</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>Temptation</strong><br>n:引诱，诱惑<br>The man resisted the temptation of money.<br>这个男人抵制住了金钱的诱惑。<br>音乐推荐–<a href="http://music.163.com/#/song?id=456370701" target="_blank" rel="noopener">Side To Side–Ariana Grande / Nicki Minaj</a></p>
+<p><strong>Fool</strong><br>n:笨蛋，傻瓜<br>v:玩弄，愚弄<br>He is such a fool that he can’t answer this question.<br>他连这个问题都回答不了，真是个笨蛋。<br>音乐推荐–<a href="http://music.163.com/#/song?id=439076364" target="_blank" rel="noopener">Solo Dance–Martin Jensen</a></p>
+        
+          <a class="article-more-a" href="/2018/01/25/三周一总结-2/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">英语</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/25/三周一总结-2/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-三周一总结-1" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -466,241 +770,9 @@
 
 
   
-    <article id="post-organizational-behavior-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/09/organizational-behavior-3/">组织行为学第三讲——群体</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/09/organizational-behavior-3/" class="archive-article-date">
-  	<time datetime="2018-01-09T07:17:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="群体的定义与分类"><a href="#群体的定义与分类" class="headerlink" title="群体的定义与分类"></a>群体的定义与分类</h2><h3 id="什么是群体？"><a href="#什么是群体？" class="headerlink" title="什么是群体？"></a>什么是群体？</h3><p>为实现特定目标而组合到一起并形成互动和相互依赖关系的两个或者更多个体。包括：正式群体和非正式群体。</p>
-<p><strong>正式群体</strong>：由组织结构界定的，根据工作岗位来确定工作任务的群体。在正式群体中，个体成员的行为由组织目标来规定，并且致力于实现组织目标。</p>
-<p><strong>非正式群体</strong>：那些没有正式结构，也不是组织指定的群体，它们一般是员工为了满足社交需求而在工作环境中自然形成的组合。<br>
-        
-          <a class="article-more-a" href="/2018/01/09/organizational-behavior-3/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">组织行为学</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/09/organizational-behavior-3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-骑行语录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/30/骑行语录/">黑鸟单车-2017我的骑行之路——骑行语录</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/30/骑行语录/" class="archive-article-date">
-  	<time datetime="2017-12-30T11:10:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="https://raw.githubusercontent.com/gaobingzhi/Blog-Back-Up/master/ridePhotos/qixingyulu.jpg" alt="2017我的骑行之路——骑行语录"></p>
-<p>1、自由的心，骑行的梦，唯美的年轮。回首岁月的痕迹，尽是车轮画笔的横竖撇捺，厚重而有力的记载了一个轮回的骑行之路，那么美，那么珍贵。<br>
-        
-          <a class="article-more-a" href="/2017/12/30/骑行语录/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">骑行</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/30/骑行语录/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-骑行妙峰山" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/08/05/骑行妙峰山/">骑行妙峰山</a>
-    </h1>
-  
-
-        
-        <a href="/2017/08/05/骑行妙峰山/" class="archive-article-date">
-  	<time datetime="2017-08-05T11:20:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>黑鸟小结正式上线，集文本、图片、活动、记录、路线、路书于一体，骑行界强大的富文本编辑神器。恰巧周末骑行妙峰山，关于这次骑行体验，用黑鸟神器小结一下～～～先来一发<br>8月4日发布骑行活动，报名5人，里程100公里，☞不过眼镜大哥玩嗨了，从昌平回龙观远道而来多了20公里，但还好吧，他说他行！！☜ 7点半准时集齐4人，华哥早已以90的踏频出发啦。</p>
-<p><img src="https://raw.githubusercontent.com/gaobingzhi/Blog-Back-Up/master/ridePhotos/1502808_1502356282550.jpg" alt="小香蕉"><br>
-        
-          <a class="article-more-a" href="/2017/08/05/骑行妙峰山/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">骑行</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/08/05/骑行妙峰山/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span>
+      <a class="extend prev" rel="prev" href="/page/2/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/4/">Next &raquo;</a>
     </nav>
   
 
@@ -815,11 +887,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -831,11 +903,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
               <li class="article-tag-list-item">

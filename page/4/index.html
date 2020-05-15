@@ -6,20 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://gaobingzhi.github.io">
-  <title>数据结构——字符串 | 黑饼的小站</title>
+  <title>黑饼的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
-<meta name="keywords" content="数据结构">
-<meta property="og:type" content="article">
-<meta property="og:title" content="数据结构——字符串">
-<meta property="og:url" content="https://gaobingzhi.github.io/2018/04/10/数据结构——字符串/index.html">
+  <meta name="description" content="内心有点躁动的程序猿。">
+<meta name="keywords" content="android,开发者,程序猿,程序媛,极客,编程,代码,开源,IT网站,Developer,Programmer">
+<meta property="og:type" content="website">
+<meta property="og:title" content="黑饼的小站">
+<meta property="og:url" content="https://gaobingzhi.github.io/page/4/index.html">
 <meta property="og:site_name" content="黑饼的小站">
-<meta property="og:description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
+<meta property="og:description" content="内心有点躁动的程序猿。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-01T14:18:14.064Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构——字符串">
-<meta name="twitter:description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
+<meta name="twitter:title" content="黑饼的小站">
+<meta name="twitter:description" content="内心有点躁动的程序猿。">
   
     <link rel="alternative" href="/atom.xml" title="黑饼的小站" type="application/atom+xml">
   
@@ -155,67 +154,38 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据结构——字符串" class="article article-type-post " itemscope itemprop="blogPost">
+            
+  
+    <article id="post-organizational-behavior-3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 class="article-title" itemprop="name">
-      数据结构——字符串
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/01/09/organizational-behavior-3/">组织行为学第三讲——群体</a>
     </h1>
   
 
         
-        <a href="/2018/04/10/数据结构——字符串/" class="archive-article-date">
-  	<time datetime="2018-04-10T14:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
+        <a href="/2018/01/09/organizational-behavior-3/" class="archive-article-date">
+  	<time datetime="2018-01-09T07:17:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-09</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><blockquote>
-<p>请实现一个函数，将一个字符串中的每个空格替换成“%20”</p>
-</blockquote>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> replaceSpace(StringBuffer <span class="built_in">str</span>) &#123;</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">str</span>==<span class="keyword">null</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   	<span class="built_in">int</span> p1 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>;i&lt;=p1;i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(<span class="built_in">str</span>.charAt(i)==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.<span class="built_in">append</span>(<span class="string">"  "</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">int</span> p2 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">while</span>(p1&gt;=<span class="number">0</span>&amp;&amp;p2&gt;p1)&#123;</span><br><span class="line">           <span class="built_in">char</span> pChar1 = <span class="built_in">str</span>.charAt(p1--);</span><br><span class="line">           <span class="keyword">if</span>(pChar1==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'0'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'2'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'%'</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--,pChar1);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">str</span>.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>思路：</strong> 从后往前替换原则，有n个空格则需要在字符串后面添加2*n个空格，p1指向添加前的最后位置（length-1），p2指向添加后的最后位置（length-1）。</p>
-
+        <h2 id="群体的定义与分类"><a href="#群体的定义与分类" class="headerlink" title="群体的定义与分类"></a>群体的定义与分类</h2><h3 id="什么是群体？"><a href="#什么是群体？" class="headerlink" title="什么是群体？"></a>什么是群体？</h3><p>为实现特定目标而组合到一起并形成互动和相互依赖关系的两个或者更多个体。包括：正式群体和非正式群体。</p>
+<p><strong>正式群体</strong>：由组织结构界定的，根据工作岗位来确定工作任务的群体。在正式群体中，个体成员的行为由组织目标来规定，并且致力于实现组织目标。</p>
+<p><strong>非正式群体</strong>：那些没有正式结构，也不是组织指定的群体，它们一般是员工为了满足社交需求而在工作环境中自然形成的组合。<br>
+        
+          <a class="article-more-a" href="/2018/01/09/organizational-behavior-3/#more">more >></a>
+        
       
 
       
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/alipay.png">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/img/weixin.png">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
+    </p></div>
     <div class="article-info article-info-index">
       
       
@@ -224,7 +194,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">组织行为学</a>
         		</li>
       		
 		</ul>
@@ -233,84 +203,16 @@
       
 
       
-
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/01/09/organizational-behavior-3/">展开全文 >></a>
+        </p>
       
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
 
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://gaobingzhi.github.io/2018/04/10/数据结构——字符串/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2018/04/11/数据结构——链表/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          数据结构——链表
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2018/03/26/Mac-OS-下修改Hosts文件的有效方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mac OS 下修改Hosts文件的有效方法</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -330,24 +232,166 @@
 
 
 
-  
-  
-  
 
   
-  <div id="SOHUCS" sid="数据结构——字符串"></div> 
-<script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
-<script type="text/javascript">
-    window.changyan.api.config({
-        appid: "cytpVqR55",
-        conf: "26eabd511b57c6e7d09818e1ffd124d6"
-    });
-</script>
-
+    <article id="post-骑行语录" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/12/30/骑行语录/">黑鸟单车-2017我的骑行之路——骑行语录</a>
+    </h1>
   
 
+        
+        <a href="/2017/12/30/骑行语录/" class="archive-article-date">
+  	<time datetime="2017-12-30T11:10:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-30</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><img src="https://raw.githubusercontent.com/gaobingzhi/Blog-Back-Up/master/ridePhotos/qixingyulu.jpg" alt="2017我的骑行之路——骑行语录"></p>
+<p>1、自由的心，骑行的梦，唯美的年轮。回首岁月的痕迹，尽是车轮画笔的横竖撇捺，厚重而有力的记载了一个轮回的骑行之路，那么美，那么珍贵。<br>
+        
+          <a class="article-more-a" href="/2017/12/30/骑行语录/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">骑行</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/12/30/骑行语录/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-骑行妙峰山" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/08/05/骑行妙峰山/">骑行妙峰山</a>
+    </h1>
   
 
+        
+        <a href="/2017/08/05/骑行妙峰山/" class="archive-article-date">
+  	<time datetime="2017-08-05T11:20:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>黑鸟小结正式上线，集文本、图片、活动、记录、路线、路书于一体，骑行界强大的富文本编辑神器。恰巧周末骑行妙峰山，关于这次骑行体验，用黑鸟神器小结一下～～～先来一发<br>8月4日发布骑行活动，报名5人，里程100公里，☞不过眼镜大哥玩嗨了，从昌平回龙观远道而来多了20公里，但还好吧，他说他行！！☜ 7点半准时集齐4人，华哥早已以90的踏频出发啦。</p>
+<p><img src="https://raw.githubusercontent.com/gaobingzhi/Blog-Back-Up/master/ridePhotos/1502808_1502356282550.jpg" alt="小香蕉"><br>
+        
+          <a class="article-more-a" href="/2017/08/05/骑行妙峰山/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">骑行</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2017/08/05/骑行妙峰山/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
+    </nav>
   
 
 
@@ -378,8 +422,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: false,
-		isPost: true,
+		isHome: true,
+		isPost: false,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,

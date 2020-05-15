@@ -6,20 +6,28 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://gaobingzhi.github.io">
-  <title>数据结构——字符串 | 黑饼的小站</title>
+  <title>Git—merge | 黑饼的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
-<meta name="keywords" content="数据结构">
+  <meta name="description" content="Git—merge pull 的内部操作其实是把远程仓库取到本地后（使用的是 fetch），再用一次 merge 来把远端仓库的新 commits 合并到本地。  merge ：从目标 commit 和当前 commit （即 HEAD 所指向的 commit）分叉的位置起，把目标 commit 的路径上的所有 commit 的内容一并应用到当前 commit，然后自动生成一个新的 commit。">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="数据结构——字符串">
-<meta property="og:url" content="https://gaobingzhi.github.io/2018/04/10/数据结构——字符串/index.html">
+<meta property="og:title" content="Git—merge">
+<meta property="og:url" content="https://gaobingzhi.github.io/2020/05/14/Git—merge/index.html">
 <meta property="og:site_name" content="黑饼的小站">
-<meta property="og:description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
+<meta property="og:description" content="Git—merge pull 的内部操作其实是把远程仓库取到本地后（使用的是 fetch），再用一次 merge 来把远端仓库的新 commits 合并到本地。  merge ：从目标 commit 和当前 commit （即 HEAD 所指向的 commit）分叉的位置起，把目标 commit 的路径上的所有 commit 的内容一并应用到当前 commit，然后自动生成一个新的 commit。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-01T14:18:14.064Z">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589510600926.png">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589510731023.jpg">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589510774466">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589444853258.png">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589445689345.png">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589513368194.png">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589513830614">
+<meta property="og:updated_time" content="2020-05-15T06:37:43.132Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="数据结构——字符串">
-<meta name="twitter:description" content="字符串操作 请实现一个函数，将一个字符串中的每个空格替换成“%20”  123456789101112131415161718192021222324public String replaceSpace(StringBuffer str) &amp;#123;       if(str==null)&amp;#123;           return null;       &amp;#125;   	int p1 =">
+<meta name="twitter:title" content="Git—merge">
+<meta name="twitter:description" content="Git—merge pull 的内部操作其实是把远程仓库取到本地后（使用的是 fetch），再用一次 merge 来把远端仓库的新 commits 合并到本地。  merge ：从目标 commit 和当前 commit （即 HEAD 所指向的 commit）分叉的位置起，把目标 commit 的路径上的所有 commit 的内容一并应用到当前 commit，然后自动生成一个新的 commit。">
+<meta name="twitter:image" content="http://pics.blackbirdsport.com/album/202005/1502808_1589510600926.png">
   
     <link rel="alternative" href="/atom.xml" title="黑饼的小站" type="application/atom+xml">
   
@@ -155,31 +163,73 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-数据结构——字符串" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Git—merge" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      数据结构——字符串
+      Git—merge
     </h1>
   
 
         
-        <a href="/2018/04/10/数据结构——字符串/" class="archive-article-date">
-  	<time datetime="2018-04-10T14:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
+        <a href="/2020/05/14/Git—merge/" class="archive-article-date">
+  	<time datetime="2020-05-14T05:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><blockquote>
-<p>请实现一个函数，将一个字符串中的每个空格替换成“%20”</p>
+        <h4 id="Git—merge"><a href="#Git—merge" class="headerlink" title="Git—merge"></a>Git—merge</h4><blockquote>
+<p>pull 的内部操作其实是把远程仓库取到本地后（使用的是 fetch），再用一次 merge 来把远端仓库的新 commits 合并到本地。</p>
 </blockquote>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> replaceSpace(StringBuffer <span class="built_in">str</span>) &#123;</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">str</span>==<span class="keyword">null</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   	<span class="built_in">int</span> p1 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>;i&lt;=p1;i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(<span class="built_in">str</span>.charAt(i)==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.<span class="built_in">append</span>(<span class="string">"  "</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">int</span> p2 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">while</span>(p1&gt;=<span class="number">0</span>&amp;&amp;p2&gt;p1)&#123;</span><br><span class="line">           <span class="built_in">char</span> pChar1 = <span class="built_in">str</span>.charAt(p1--);</span><br><span class="line">           <span class="keyword">if</span>(pChar1==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'0'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'2'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'%'</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--,pChar1);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">str</span>.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>思路：</strong> 从后往前替换原则，有n个空格则需要在字符串后面添加2*n个空格，p1指向添加前的最后位置（length-1），p2指向添加后的最后位置（length-1）。</p>
+<p>merge ：从目标 commit 和当前 commit （即 HEAD 所指向的 commit）分叉的位置起，把目标 commit 的路径上的所有 commit 的内容一并应用到当前 commit，然后自动生成一个新的 commit。</p>
+<a id="more"></a>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589510600926.png" alt></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//将branch1 <span class="keyword">merge</span> 到 <span class="keyword">master</span> 分支，合并后生成一个新的<span class="keyword">commit</span></span><br><span class="line">git <span class="keyword">merge</span> branch1</span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589510731023.jpg" alt></p>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589510774466" alt></p>
+<h5 id="merge的作用"><a href="#merge的作用" class="headerlink" title="merge的作用"></a>merge的作用</h5><ol>
+<li>合并分支,当一个 branch 的开发已经完成，需要把内容合并回去时，用 merge 来进行合并。</li>
+<li>pull 的内部操作。</li>
+</ol>
+<h5 id="merge-冲突"><a href="#merge-冲突" class="headerlink" title="merge 冲突"></a>merge 冲突</h5><blockquote>
+<p>merge 在做合并的时候，是有一定的自动合并能力的：如果一个分支改了 A 文件，另一个分支改了 B 文件，那么合并后就是既改 A 也改 B，这个动作会自动完成；如果两个分支都改了同一个文件，但一个改的是第 1 行，另一个改的是第 2 行，那么合并后就是第 1 行和第 2 行都改，也是自动完成。但，如果两个分支修改了同一部分内容，merge 的自动算法就搞不定了。这种情况 Git 称之为：冲突（Conflict）。</p>
+</blockquote>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589444853258.png" alt><br><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589445689345.png" alt></p>
+<p>处理步骤：</p>
+<ol>
+<li>解决掉冲突</li>
+<li>手动 commit 一下</li>
+</ol>
+<h6 id="解决冲突"><a href="#解决冲突" class="headerlink" title="解决冲突"></a>解决冲突</h6><ol>
+<li>自行决定使用哪一部分的修改。</li>
+<li>采用merge 的可视化工具，eg：<a href="http://meldmerge.org/" target="_blank" rel="noopener">meld</a>、<a href="https://sourceforge.net/projects/kdiff3/" target="_blank" rel="noopener">kdiff3</a>等。</li>
+<li><a href="https://stackoverflow.com/questions/161813/how-to-resolve-merge-conflicts-in-git" target="_blank" rel="noopener">stackoverflow:how-to-resolve-merge-conflicts-in-git </a></li>
+</ol>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// Running git mergetool <span class="keyword">for</span> me resulted <span class="keyword">in</span> vimdiff being used. You can install <span class="literal">one</span> <span class="keyword">of</span> <span class="keyword">the</span> following tools <span class="built_in">to</span> use <span class="keyword">it</span> instead: meld, opendiff, kdiff3, tkdiff, xxdiff, tortoisemerge, gvimdiff, diffuse, ecmerge, p4merge, araxis, vimdiff, emerge.</span><br><span class="line">git mergetool</span><br><span class="line"></span><br><span class="line">git config <span class="built_in">merge</span>.tool vimdiff</span><br><span class="line">git config <span class="built_in">merge</span>.conflictstyle diff3</span><br><span class="line">git config mergetool.prompt <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>被冲突中断的 merge，在手动 commit 的时候依然会自动填写提交信息。这是因为在发生冲突后，Git 仓库处于一个「merge 冲突待解决」的中间状态，在这种状态下 commit，Git 就会自动地帮你添加「这是一个 merge commit」的提交信息。</p>
+</blockquote>
+<h5 id="HEAD-领先于目标-commit"><a href="#HEAD-领先于目标-commit" class="headerlink" title="HEAD 领先于目标 commit"></a>HEAD 领先于目标 commit</h5><blockquote>
+<p>如果 merge 时的目标 commit 和 HEAD 处的 commit 并不存在分叉，而是 HEAD 领先于目标 commit：</p>
+<p>那么 merge 就没必要再创建一个新的 commit 来进行合并操作，因为并没有什么需要合并的。在这种情况下， Git 什么也不会做，merge 是一个空操作。</p>
+</blockquote>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589513368194.png" alt></p>
+<h5 id="HEAD-落后于-目标-commit——fast-forward"><a href="#HEAD-落后于-目标-commit——fast-forward" class="headerlink" title="HEAD 落后于 目标 commit——fast-forward"></a>HEAD 落后于 目标 commit——fast-forward</h5><blockquote>
+<p>如果 HEAD 和目标 commit 依然是不存在分叉，但 HEAD 不是领先于目标 commit，而是落后于目标 commit：</p>
+<p>那么 Git 会直接把 HEAD（以及它所指向的 branch，如果有的话）移动到目标 commit：</p>
+<p>这种操作有一个专有称谓，叫做 “fast-forward”（快速前移）。</p>
+</blockquote>
+<figure class="highlight cos"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">merge</span> feature1</span><br></pre></td></tr></table></figure>
+<h6 id="解释说明"><a href="#解释说明" class="headerlink" title="解释说明"></a>解释说明</h6><p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589513830614" alt></p>
+<p>origin/master 和 origin/HEAD ：它们是对远端仓库的 master 和 HEAD 的本地镜像，在 git pull 的「两步走」中的第一步——git fetch 下载远端仓库内容时，这两个镜像引用得到了更新，也就是上面这个动图中的第一步：origin/master 和 origin/HEAD 移动到了最新的 commit。</p>
+<p>git pull 的第二步操作 merge 的目标 commit ，是远端仓库的 HEAD，也就是 origin/HEAD ，所以 git pull 的第二步的完整内容是：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">merge</span> origin/<span class="keyword">HEAD</span></span><br></pre></td></tr></table></figure>
+<p>因此 HEAD 就会带着 master 一起，也指向图中绿色的最新 commit 了。</p>
 
       
 
@@ -224,7 +274,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -280,7 +330,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=https://gaobingzhi.github.io/2018/04/10/数据结构——字符串/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=https://gaobingzhi.github.io/2020/05/14/Git—merge/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +344,18 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/04/11/数据结构——链表/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2020/05/14/Git—Feature Branching/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          数据结构——链表
+          Git—Feature Branching
         
       </div>
     </a>
   
   
-    <a href="/2018/03/26/Mac-OS-下修改Hosts文件的有效方法/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Mac OS 下修改Hosts文件的有效方法</div>
+    <a href="/2020/05/14/Git—push/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Git—push</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -335,7 +385,7 @@
   
 
   
-  <div id="SOHUCS" sid="数据结构——字符串"></div> 
+  <div id="SOHUCS" sid="Git—merge"></div> 
 <script charset="utf-8" type="text/javascript" src="//changyan.sohu.com/upload/changyan.js"></script>
 <script type="text/javascript">
     window.changyan.api.config({
