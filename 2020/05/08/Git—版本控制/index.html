@@ -8,18 +8,20 @@
   <link rel="dns-prefetch" href="https://gaobingzhi.github.io">
   <title>Git—版本控制 | 黑饼的小站</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一. 版本控制系统（VCS）版本控制 版本控制系统（VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。  eg：文本编辑；文本编辑会自动保存编辑历史，执行「撤销（Undo）」功能，会回退到上一个版本，这是一种比较简单的版本控制的例子">
+  <meta name="description" content="一. 版本控制系统（VCS）版本控制 版本控制系统（Version Control System -VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。  eg：文本编辑；文本编辑会自动保存编辑历史，执行「撤销（Undo）」功能，会回退到上一个版本，这是一种比较简单的版本控制的例子">
 <meta name="keywords" content="Git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Git—版本控制">
 <meta property="og:url" content="https://gaobingzhi.github.io/2020/05/08/Git—版本控制/index.html">
 <meta property="og:site_name" content="黑饼的小站">
-<meta property="og:description" content="一. 版本控制系统（VCS）版本控制 版本控制系统（VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。  eg：文本编辑；文本编辑会自动保存编辑历史，执行「撤销（Undo）」功能，会回退到上一个版本，这是一种比较简单的版本控制的例子">
+<meta property="og:description" content="一. 版本控制系统（VCS）版本控制 版本控制系统（Version Control System -VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。  eg：文本编辑；文本编辑会自动保存编辑历史，执行「撤销（Undo）」功能，会回退到上一个版本，这是一种比较简单的版本控制的例子">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2020-05-14T14:54:12.977Z">
+<meta property="og:image" content="http://pics.blackbirdsport.com/album/202005/150719_1589525463071.png">
+<meta property="og:updated_time" content="2020-05-15T06:53:12.329Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git—版本控制">
-<meta name="twitter:description" content="一. 版本控制系统（VCS）版本控制 版本控制系统（VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。  eg：文本编辑；文本编辑会自动保存编辑历史，执行「撤销（Undo）」功能，会回退到上一个版本，这是一种比较简单的版本控制的例子">
+<meta name="twitter:description" content="一. 版本控制系统（VCS）版本控制 版本控制系统（Version Control System -VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。  eg：文本编辑；文本编辑会自动保存编辑历史，执行「撤销（Undo）」功能，会回退到上一个版本，这是一种比较简单的版本控制的例子">
+<meta name="twitter:image" content="http://pics.blackbirdsport.com/album/202005/150719_1589525463071.png">
   
     <link rel="alternative" href="/atom.xml" title="黑饼的小站" type="application/atom+xml">
   
@@ -176,7 +178,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="一-版本控制系统（VCS）"><a href="#一-版本控制系统（VCS）" class="headerlink" title="一. 版本控制系统（VCS）"></a>一. 版本控制系统（VCS）</h4><h5 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h5><blockquote>
-<p>版本控制系统（VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。</p>
+<p>版本控制系统（Version Control System -VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。</p>
 </blockquote>
 <p><em>eg：文本编辑；文本编辑会自动保存编辑历史，执行「撤销（Undo）」功能，会回退到上一个版本，这是一种比较简单的版本控制的例子</em></p>
 <a id="more"></a>
@@ -186,6 +188,14 @@
 <h5 id="中央仓库"><a href="#中央仓库" class="headerlink" title="中央仓库"></a>中央仓库</h5><blockquote>
 <p>多人合作开发，同步开发需求。</p>
 </blockquote>
+<p>版本控制、主动提交、中央仓库这三个要素，共同构成了版本控制系统（VCS）的核心：开发团队中的每个人向中央仓库主动提交自己的改动和同步别人的改动，并在需要的时候查看和操作历史版本，这就是版本控制系统。</p>
+<h4 id="中央式版本控制系统"><a href="#中央式版本控制系统" class="headerlink" title="中央式版本控制系统"></a>中央式版本控制系统</h4><p><img src="http://pics.blackbirdsport.com/album/202005/150719_1589525463071.png" alt></p>
+<ol>
+<li>第一次加入团队时，把中央仓库的代码取下来；</li>
+<li>写完的新功能提交到中央仓库；</li>
+<li>同事提交到中央仓库的新代码，及时同步下来。</li>
+</ol>
+<p>这就是中央式 VCS 最基本的工作模型。当然，实际的开发工作并没有简单到这种程度，因为你时常会需要处理代码冲突、查看版本历史、回退代码版本等；另外，Git 属于分布式 VCS，它的概念也比中央式 VCS 要复杂一些。</p>
 
       
 
@@ -467,11 +477,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+                <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
               <li class="article-tag-list-item">
