@@ -156,35 +156,32 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Git—rebase -i" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git—amend" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/18/Git—rebase -i/">Git rebase -i</a>
+      <a class="article-title" href="/2020/05/18/Git—amend/">Git—amend</a>
     </h1>
   
 
         
-        <a href="/2020/05/18/Git—rebase -i/" class="archive-article-date">
-  	<time datetime="2020-05-18T07:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
+        <a href="/2020/05/18/Git—amend/" class="archive-article-date">
+  	<time datetime="2020-05-18T07:00:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="rebase-i：交互式-rebase"><a href="#rebase-i：交互式-rebase" class="headerlink" title="rebase -i：交互式 rebase"></a>rebase -i：交互式 rebase</h4><blockquote>
-<p>如果不是最新的 commit 写错，就不能用 commit –amend 来修复了，而是要用 rebase。不过需要给 rebase 也加一个参数：-i。</p>
-<p>rebase -i 是 rebase –interactive 的缩写形式，意为「交互式 rebase」。</p>
-<p>所谓「交互式 rebase」，就是在 rebase 的操作执行之前，你可以指定要 rebase 的 commit 链中的每一个 commit 是否需要进一步修改。</p>
-<p>那么你就可以利用这个特点，进行一次「原地 rebase」。</p>
+        <h4 id="amend——修正提交"><a href="#amend——修正提交" class="headerlink" title="amend——修正提交"></a>amend——修正提交</h4><blockquote>
+<p>在提交时，如果加上 –amend 参数，Git 不会在当前 commit 上增加 commit，而是会把当前 commit 里的内容和暂存区（stageing area）里的内容合并起来后创建一个新的 commit，用这个新的 commit 把当前 commit 替换掉。所以 commit –amend 做的事就是它的字面意思：对最新一条 commit 进行修正。</p>
 </blockquote>
-        
-          <a class="article-more-a" href="/2020/05/18/Git—rebase -i/#more">more >></a>
-        
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">commit</span> <span class="comment">--amend</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202007/1502808_1593660325295" alt></p>
+
       
 
       
@@ -207,7 +204,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/18/Git—rebase -i/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/18/Git—amend/">展开全文 >></a>
         </p>
       
 
@@ -912,19 +909,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">beauty</a>
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
