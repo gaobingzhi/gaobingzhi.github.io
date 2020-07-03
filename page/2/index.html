@@ -156,32 +156,34 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Git—分布式版本控制系统（DVCS）" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git—rebase -i" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/13/Git—分布式版本控制系统（DVCS）/">Git—分布式版本控制系统（DVCS）</a>
+      <a class="article-title" href="/2020/05/18/Git—rebase -i/">Git rebase -i</a>
     </h1>
   
 
         
-        <a href="/2020/05/13/Git—分布式版本控制系统（DVCS）/" class="archive-article-date">
-  	<time datetime="2020-05-13T15:02:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+        <a href="/2020/05/18/Git—rebase -i/" class="archive-article-date">
+  	<time datetime="2020-05-18T07:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Git—分布式版本控制系统（DVCS）"><a href="#Git—分布式版本控制系统（DVCS）" class="headerlink" title="Git—分布式版本控制系统（DVCS）"></a>Git—分布式版本控制系统（DVCS）</h4><blockquote>
-<p>分布式 VCS （Distributed Version Control System - DVCS）和中央式的区别在于，分布式 VCS 除了中央仓库之外，还有本地仓库：团队中每一个成员的机器上都有一份本地仓库，这个仓库里包含了所有的版本历史，每个人在自己的机器上就可以提交代码、查看历史，而无需联网和中央仓库交互——当然，取而代之的，你需要和本地仓库交互。</p>
+        <h4 id="rebase-i：交互式-rebase"><a href="#rebase-i：交互式-rebase" class="headerlink" title="rebase -i：交互式 rebase"></a>rebase -i：交互式 rebase</h4><blockquote>
+<p>如果不是最新的 commit 写错，就不能用 commit –amend 来修复了，而是要用 rebase。不过需要给 rebase 也加一个参数：-i。</p>
+<p>rebase -i 是 rebase –interactive 的缩写形式，意为「交互式 rebase」。</p>
+<p>所谓「交互式 rebase」，就是在 rebase 的操作执行之前，你可以指定要 rebase 的 commit 链中的每一个 commit 是否需要进一步修改。</p>
+<p>那么你就可以利用这个特点，进行一次「原地 rebase」。</p>
 </blockquote>
-<p><em>中央式 VCS 的中央仓库有两个主要功能：保存版本历史、同步团队代码。而在分布式 VCS 中，保存版本历史的工作转交到了每个团队成员的本地仓库中，中央仓库就只剩下了同步团队代码这一个主要任务。它的中央仓库依然也保存了历史版本，但这份历史版本更多的是作为团队间的同步中转站。</em></p>
         
-          <a class="article-more-a" href="/2020/05/13/Git—分布式版本控制系统（DVCS）/#more">more >></a>
+          <a class="article-more-a" href="/2020/05/18/Git—rebase -i/#more">more >></a>
         
       
 
@@ -205,7 +207,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/13/Git—分布式版本控制系统（DVCS）/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/18/Git—rebase -i/">展开全文 >></a>
         </p>
       
 
@@ -235,32 +237,32 @@
 
 
   
-    <article id="post-Git—版本控制" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git—rebase" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/08/Git—版本控制/">Git—版本控制</a>
+      <a class="article-title" href="/2020/05/18/Git—rebase/">Git—rebase</a>
     </h1>
   
 
         
-        <a href="/2020/05/08/Git—版本控制/" class="archive-article-date">
-  	<time datetime="2020-05-08T14:17:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-08</time>
+        <a href="/2020/05/18/Git—rebase/" class="archive-article-date">
+  	<time datetime="2020-05-18T06:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="一-版本控制系统（VCS）"><a href="#一-版本控制系统（VCS）" class="headerlink" title="一. 版本控制系统（VCS）"></a>一. 版本控制系统（VCS）</h4><h5 id="版本控制"><a href="#版本控制" class="headerlink" title="版本控制"></a>版本控制</h5><blockquote>
-<p>版本控制系统（Version Control System -VCS）最基本的功能是版本控制。所谓版本控制，意思就是在文件的修改历程中保留修改历史，让你可以方便地撤销之前对文件的修改操作。</p>
+        <h4 id="rebase——在新位置重新提交"><a href="#rebase——在新位置重新提交" class="headerlink" title="rebase——在新位置重新提交"></a>rebase——在新位置重新提交</h4><blockquote>
+<p>有些人不喜欢 merge，因为在 merge 之后，commit 历史就会出现分叉，这种分叉再汇合的结构会让有些人觉得混乱而难以管理。如果你不希望 commit 历史出现分叉，可以用 rebase 来代替 merge。</p>
 </blockquote>
-<p><em>eg：文本编辑；文本编辑会自动保存编辑历史，执行「撤销（Undo）」功能，会回退到上一个版本，这是一种比较简单的版本控制的例子</em></p>
+<p>rebase 的意思是，给你的 commit 序列重新设置基础点（也就是父 commit）。展开来说就是，把你指定的 commit 以及它所在的 commit 串，以指定的目标 commit 为基础，依次重新提交一次。</p>
         
-          <a class="article-more-a" href="/2020/05/08/Git—版本控制/#more">more >></a>
+          <a class="article-more-a" href="/2020/05/18/Git—rebase/#more">more >></a>
         
       
 
@@ -284,7 +286,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/08/Git—版本控制/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/18/Git—rebase/">展开全文 >></a>
         </p>
       
 
@@ -314,266 +316,35 @@
 
 
   
-    <article id="post-Hybrid-App-开发模式下的一次揪心历程" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git—log" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/27/Hybrid-App-开发模式下的一次揪心历程/">Hybrid App 开发模式下的一次揪心历程</a>
+      <a class="article-title" href="/2020/05/14/Git—log/">Git—log</a>
     </h1>
   
 
         
-        <a href="/2018/04/27/Hybrid-App-开发模式下的一次揪心历程/" class="archive-article-date">
-  	<time datetime="2018-04-27T08:47:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-27</time>
+        <a href="/2020/05/14/Git—log/" class="archive-article-date">
+  	<time datetime="2020-05-14T08:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="WebView-的痛"><a href="#WebView-的痛" class="headerlink" title="WebView 的痛"></a>WebView 的痛</h4><p><img src="http://pics.blackbirdsport.com/album/201807/1502808_1532681666914.png@180w_320h" alt="红包"></p>
-<p>Web App 与 Native App 混合开发模式有着Native App良好的用户体验和Web App 的跨品台优势，所以很是受宠。当然，我们公司也采用了这种模式，采用JsBridge作为两者之间的通信桥梁。WebView可以说是Android最难用的控件了，需要适配Android的各个版本，比如说以下几点：</p>
-        
-          <a class="article-more-a" href="/2018/04/27/Hybrid-App-开发模式下的一次揪心历程/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Bug</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/27/Hybrid-App-开发模式下的一次揪心历程/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android-动画小知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/25/Android-动画小知识/">Android 动画小知识</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/25/Android-动画小知识/" class="archive-article-date">
-  	<time datetime="2018-04-25T02:16:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Android-的三种动画"><a href="#Android-的三种动画" class="headerlink" title="Android 的三种动画"></a>Android 的三种动画</h4><ul>
-<li><p>帧动画：也就是我们说的 Frame 动画。 Frame 动画是一系列图片按照一定的顺序展示的过程，和放电影的机制相似，它的原理是在一定的时间段内切换多张有细微差异的图片从而达到动画的效果。由于是一帧一帧加载，所以需要较多的图片。从而增大 APK 的大小，不过 Frame 动画可以实现一些比较难的效果，例如：等待的环形进度。 所涉及到的 Java 对象有： AnimationDrawable 。</p>
-</li>
-<li><p>补间动画：也就是 Tween 动画，是操作某一个控件让其展现出旋转、渐变、移动、缩放的一种转换过程。是一种视觉上的变化，不是真正位置上的变化。只能运用在 View 对象上，并且功能相对来说较为局限。例如：旋转动画只能够在 x 、 y 轴进行，而不能在 z 轴放心进行旋转。因此，补间动画通常用于执行一些比较简单的动画。 所涉及到的 Java 对象有： AlphaAnimation （渐变动画）、 ScaleAnimation （缩放动画）、 TranslateAnimation （位移动画）、 RotateAnimation （旋转动画）。</p>
-</li>
-<li><p>属性动画：是 Android 3.0 之后推出的，其机制不再是针对 View 来设计的，也不限于只能实现移动、缩放、旋转和淡入这几种简单的动画操作，同时也不再只是一种视觉上的动画效果。属性动画实际上是一种在一定时间段内不断修改某个对象的某个属性值的机制。 所涉及到的 Java 对象有： ValueAnimator 、 ObjectAnimator 。</p>
-</li>
-</ul>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/25/Android-动画小知识/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Android-UI小知识" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/22/Android-UI小知识/">Android UI小知识</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/22/Android-UI小知识/" class="archive-article-date">
-  	<time datetime="2018-04-22T14:44:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-22</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="常用控件"><a href="#常用控件" class="headerlink" title="常用控件"></a>常用控件</h4><h6 id="1-ProgressBar-样式问题"><a href="#1-ProgressBar-样式问题" class="headerlink" title="1.ProgressBar 样式问题"></a>1.ProgressBar 样式问题</h6><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;ProgressBar</span><br><span class="line">       android:<span class="attribute">id</span>=<span class="string">"@+id/progress_bar"</span></span><br><span class="line">       android:<span class="attribute">layout_width</span>=<span class="string">"match_parent"</span></span><br><span class="line">       android:<span class="attribute">layout_height</span>=<span class="string">"wrap_content"</span> </span><br><span class="line">       <span class="attribute">style</span>=<span class="string">"?android:progressBarStyleHorizontal"</span></span><br><span class="line">       android:<span class="attribute">max</span>=<span class="string">"100"</span>/&gt;</span><br></pre></td></tr></table></figure>
-<p><code>style=&quot;?android:progressBarStyleHorizontal&quot;</code>为系统样式，设置横向进度样式。</p>
-        
-          <a class="article-more-a" href="/2018/04/22/Android-UI小知识/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Android</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/22/Android-UI小知识/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-符合泊松分布的随机红包算法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/18/符合泊松分布的随机红包算法/">符合泊松分布的随机红包算法</a>
-    </h1>
-  
-
-        
-        <a href="/2018/04/18/符合泊松分布的随机红包算法/" class="archive-article-date">
-  	<time datetime="2018-04-18T06:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-18</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="算法解析"><a href="#算法解析" class="headerlink" title="算法解析"></a>算法解析</h4><blockquote>
-<p>根据期望值产生随机数，符合泊松分布</p>
+        <h4 id="Git—log"><a href="#Git—log" class="headerlink" title="Git—log"></a>Git—log</h4><h5 id="git-log-可以查看历史记录："><a href="#git-log-可以查看历史记录：" class="headerlink" title="git log 可以查看历史记录："></a>git log 可以查看历史记录：</h5><p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589522504070.png" alt></p>
+<h5 id="log-p-查看详细历史"><a href="#log-p-查看详细历史" class="headerlink" title="log -p 查看详细历史"></a>log -p 查看详细历史</h5><blockquote>
+<p>-p 是 –patch 的缩写，通过 -p 参数，你可以看到具体每个 commit 的改动细节：</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getPossionVariable</span><span class="params">(<span class="keyword">double</span> lambda)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">double</span> y = Math.random(), cdf = getPossionProbability(x, lambda);</span><br><span class="line">        <span class="keyword">while</span> (cdf &lt; y) &#123;</span><br><span class="line">            x++;</span><br><span class="line">            cdf += getPossionProbability(x, lambda);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> x;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">double</span> getPossionProbability(<span class="keyword">int</span> k, <span class="keyword">double</span> lambda) &#123;</span><br><span class="line">        <span class="keyword">double</span> c = Math.exp(-lambda), <span class="keyword">sum</span> = <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= k; i++) &#123;</span><br><span class="line">            <span class="keyword">sum</span> *= lambda / i;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">sum</span> * c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -p</span><br></pre></td></tr></table></figure>
+<p>log -p 可以看到每一个 commit 的每一行改动，所以很适合用于代码 review。</p>
+        
+          <a class="article-more-a" href="/2020/05/14/Git—log/#more">more >></a>
+        
       
 
       
@@ -586,7 +357,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -596,7 +367,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/18/符合泊松分布的随机红包算法/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/14/Git—log/">展开全文 >></a>
         </p>
       
 
@@ -626,31 +397,33 @@
 
 
   
-    <article id="post-数据结构——链表" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git—add说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/11/数据结构——链表/">数据结构——链表</a>
+      <a class="article-title" href="/2020/05/14/Git—add说明/">Git—add说明</a>
     </h1>
   
 
         
-        <a href="/2018/04/11/数据结构——链表/" class="archive-article-date">
-  	<time datetime="2018-04-11T15:03:28.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-11</time>
+        <a href="/2020/05/14/Git—add说明/" class="archive-article-date">
+  	<time datetime="2020-05-14T07:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <blockquote>
-<p>链表反转</p>
+        <h4 id="Git—add说明"><a href="#Git—add说明" class="headerlink" title="Git—add说明"></a>Git—add说明</h4><p>#####1. add 后面加个点 “.”：全部暂存<br>add 指令除了 git add 文件名 这种用法外，还可以使用 add . 来直接把工作目录下的所有改动全部放进暂存区：</p>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> .</span></span><br></pre></td></tr></table></figure>
+<h5 id="2-add-添加的是文件改动，而不是文件名"><a href="#2-add-添加的是文件改动，而不是文件名" class="headerlink" title="2.add 添加的是文件改动，而不是文件名"></a>2.add 添加的是文件改动，而不是文件名</h5><blockquote>
+<p>add 添加进暂存区的不是文件名，而是具体的文件改动内容。你在 add 时的改动都被添加进了暂存区，但在 add 之后的新改动并不会自动被添加进暂存区。在这时如果你提交：</p>
 </blockquote>
-<figure class="highlight haxe"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> Node reversed_linkedlist() &#123;</span><br><span class="line">        MyLinkedList list = <span class="keyword">new</span> <span class="type">MyLinkedList</span>();</span><br><span class="line">        Node head = list.init();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span>(head == <span class="literal">null</span> || head.next == <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> head;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//使用三个节指针</span></span><br><span class="line">        Node current = head;</span><br><span class="line">        Node <span class="keyword">new</span><span class="type">Head</span> = <span class="literal">null</span>;</span><br><span class="line">        Node next = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">while</span>(current != <span class="literal">null</span>) &#123;</span><br><span class="line">            <span class="comment">//先将当前节点的下个节点保存</span></span><br><span class="line">            next = current.next;</span><br><span class="line">            current.next = <span class="keyword">new</span><span class="type">Head</span>; <span class="comment">//将原来的链表断链,将current的下一个结点指向新链表的头结点</span></span><br><span class="line">            <span class="keyword">new</span><span class="type">Head</span> = current; <span class="comment">//将current设为新表头</span></span><br><span class="line">            current = next; <span class="comment">//将之前保存的next设为下一个节点</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span><span class="type">Head</span>;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>思路：</strong>一个指针为当前节点，一个指针指向当前节点的下一个节点，另外一个节点则指向新链表表头从而保存结果。</p>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git commit</span></span><br></pre></td></tr></table></figure>
+<p>那么你那些新的改动是不会被提交的。</p>
 
       
 
@@ -664,7 +437,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -674,7 +447,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/11/数据结构——链表/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/14/Git—add说明/">展开全文 >></a>
         </p>
       
 
@@ -704,32 +477,33 @@
 
 
   
-    <article id="post-数据结构——字符串" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git—Feature Branching" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2018/04/10/数据结构——字符串/">数据结构——字符串</a>
+      <a class="article-title" href="/2020/05/14/Git—Feature Branching/">Git—Feature Branching</a>
     </h1>
   
 
         
-        <a href="/2018/04/10/数据结构——字符串/" class="archive-article-date">
-  	<time datetime="2018-04-10T14:54:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-04-10</time>
+        <a href="/2020/05/14/Git—Feature Branching/" class="archive-article-date">
+  	<time datetime="2020-05-14T06:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="字符串操作"><a href="#字符串操作" class="headerlink" title="字符串操作"></a>字符串操作</h2><blockquote>
-<p>请实现一个函数，将一个字符串中的每个空格替换成“%20”</p>
-</blockquote>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">String</span> replaceSpace(StringBuffer <span class="built_in">str</span>) &#123;</span><br><span class="line">       <span class="keyword">if</span>(<span class="built_in">str</span>==<span class="keyword">null</span>)&#123;</span><br><span class="line">           <span class="keyword">return</span> <span class="keyword">null</span>;</span><br><span class="line">       &#125;</span><br><span class="line">   	<span class="built_in">int</span> p1 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">for</span>(<span class="built_in">int</span> i = <span class="number">0</span>;i&lt;=p1;i++)&#123;</span><br><span class="line">           <span class="keyword">if</span>(<span class="built_in">str</span>.charAt(i)==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.<span class="built_in">append</span>(<span class="string">"  "</span>);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       </span><br><span class="line">       <span class="built_in">int</span> p2 = <span class="built_in">str</span>.length()<span class="number">-1</span>;</span><br><span class="line">       <span class="keyword">while</span>(p1&gt;=<span class="number">0</span>&amp;&amp;p2&gt;p1)&#123;</span><br><span class="line">           <span class="built_in">char</span> pChar1 = <span class="built_in">str</span>.charAt(p1--);</span><br><span class="line">           <span class="keyword">if</span>(pChar1==<span class="string">' '</span>)&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'0'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'2'</span>);</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--, <span class="string">'%'</span>);</span><br><span class="line">           &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">               <span class="built_in">str</span>.setCharAt(p2--,pChar1);</span><br><span class="line">           &#125;</span><br><span class="line">       &#125;</span><br><span class="line">       <span class="keyword">return</span> <span class="built_in">str</span>.toString();</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
-<p><strong>思路：</strong> 从后往前替换原则，有n个空格则需要在字符串后面添加2*n个空格，p1指向添加前的最后位置（length-1），p2指向添加后的最后位置（length-1）。</p>
-
+        <h4 id="Git—Feature-Branching"><a href="#Git—Feature-Branching" class="headerlink" title="Git—Feature Branching"></a>Git—Feature Branching</h4><h5 id="核心步骤"><a href="#核心步骤" class="headerlink" title="核心步骤"></a>核心步骤</h5><ol>
+<li>任何新的功能（feature）或 bug 修复全都新建一个 branch 来写；</li>
+<li>branch 写完后，合并到 master，然后删掉这个 branch。</li>
+</ol>
+        
+          <a class="article-more-a" href="/2020/05/14/Git—Feature Branching/#more">more >></a>
+        
       
 
       
@@ -742,7 +516,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">数据结构</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
         		</li>
       		
 		</ul>
@@ -752,7 +526,242 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2018/04/10/数据结构——字符串/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/14/Git—Feature Branching/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—merge" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/Git—merge/">Git—merge</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/Git—merge/" class="archive-article-date">
+  	<time datetime="2020-05-14T05:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—merge"><a href="#Git—merge" class="headerlink" title="Git—merge"></a>Git—merge</h4><blockquote>
+<p>pull 的内部操作其实是把远程仓库取到本地后（使用的是 fetch），再用一次 merge 来把远端仓库的新 commits 合并到本地。</p>
+</blockquote>
+<p>merge ：从目标 commit 和当前 commit （即 HEAD 所指向的 commit）分叉的位置起，把目标 commit 的路径上的所有 commit 的内容一并应用到当前 commit，然后自动生成一个新的 commit。</p>
+        
+          <a class="article-more-a" href="/2020/05/14/Git—merge/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/Git—merge/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—push" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/Git—push/">Git—push</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/Git—push/" class="archive-article-date">
+  	<time datetime="2020-05-14T04:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—push"><a href="#Git—push" class="headerlink" title="Git—push"></a>Git—push</h4><blockquote>
+<p>push 做的事是：把当前 branch 的位置（即它指向哪个 commit）上传到远端仓库，并把它的路径上的 commits 一并上传。</p>
+</blockquote>
+<p>例如，本地仓库有一个 master ，它超前了远程仓库两个提交；另外还有一个新建的 branch 叫 feature1，远程仓库还没有记载过它。具体大概像这样：</p>
+        
+          <a class="article-more-a" href="/2020/05/14/Git—push/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/Git—push/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—HEAD、master 与 branch" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/14/Git—HEAD、master 与 branch/">Git—HEAD、master 与 branch</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/14/Git—HEAD、master 与 branch/" class="archive-article-date">
+  	<time datetime="2020-05-14T03:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="Git—HEAD、master-与-branch"><a href="#Git—HEAD、master-与-branch" class="headerlink" title="Git—HEAD、master 与 branch"></a>Git—HEAD、master 与 branch</h4><h5 id="引用：commit-的快捷方式"><a href="#引用：commit-的快捷方式" class="headerlink" title="引用：commit 的快捷方式"></a>引用：commit 的快捷方式</h5><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589447084767.png" alt></p>
+        
+          <a class="article-more-a" href="/2020/05/14/Git—HEAD、master 与 branch/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/14/Git—HEAD、master 与 branch/">展开全文 >></a>
         </p>
       
 
@@ -784,7 +793,7 @@
   
   
     <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
     </nav>
   
 
@@ -899,10 +908,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
@@ -911,11 +916,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
               </li>
              
               <li class="article-tag-list-item">

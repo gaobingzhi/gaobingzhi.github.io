@@ -156,506 +156,31 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-Git—log" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git—.gitignore" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/Git—log/">Git—log</a>
+      <a class="article-title" href="/2020/05/24/Git—.gitignore/">Git—.gitignore</a>
     </h1>
   
 
         
-        <a href="/2020/05/14/Git—log/" class="archive-article-date">
-  	<time datetime="2020-05-14T08:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
+        <a href="/2020/05/24/Git—.gitignore/" class="archive-article-date">
+  	<time datetime="2020-05-24T02:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-24</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Git—log"><a href="#Git—log" class="headerlink" title="Git—log"></a>Git—log</h4><h5 id="git-log-可以查看历史记录："><a href="#git-log-可以查看历史记录：" class="headerlink" title="git log 可以查看历史记录："></a>git log 可以查看历史记录：</h5><p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589522504070.png" alt></p>
-<h5 id="log-p-查看详细历史"><a href="#log-p-查看详细历史" class="headerlink" title="log -p 查看详细历史"></a>log -p 查看详细历史</h5><blockquote>
-<p>-p 是 –patch 的缩写，通过 -p 参数，你可以看到具体每个 commit 的改动细节：</p>
-</blockquote>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span> -p</span><br></pre></td></tr></table></figure>
-<p>log -p 可以看到每一个 commit 的每一行改动，所以很适合用于代码 review。</p>
-        
-          <a class="article-more-a" href="/2020/05/14/Git—log/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/Git—log/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git—add说明" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/Git—add说明/">Git—add说明</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/Git—add说明/" class="archive-article-date">
-  	<time datetime="2020-05-14T07:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Git—add说明"><a href="#Git—add说明" class="headerlink" title="Git—add说明"></a>Git—add说明</h4><p>#####1. add 后面加个点 “.”：全部暂存<br>add 指令除了 git add 文件名 这种用法外，还可以使用 add . 来直接把工作目录下的所有改动全部放进暂存区：</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span><span class="bash"> .</span></span><br></pre></td></tr></table></figure>
-<h5 id="2-add-添加的是文件改动，而不是文件名"><a href="#2-add-添加的是文件改动，而不是文件名" class="headerlink" title="2.add 添加的是文件改动，而不是文件名"></a>2.add 添加的是文件改动，而不是文件名</h5><blockquote>
-<p>add 添加进暂存区的不是文件名，而是具体的文件改动内容。你在 add 时的改动都被添加进了暂存区，但在 add 之后的新改动并不会自动被添加进暂存区。在这时如果你提交：</p>
-</blockquote>
-<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">git commit</span></span><br></pre></td></tr></table></figure>
-<p>那么你那些新的改动是不会被提交的。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/Git—add说明/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git—Feature Branching" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/Git—Feature Branching/">Git—Feature Branching</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/Git—Feature Branching/" class="archive-article-date">
-  	<time datetime="2020-05-14T06:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Git—Feature-Branching"><a href="#Git—Feature-Branching" class="headerlink" title="Git—Feature Branching"></a>Git—Feature Branching</h4><h5 id="核心步骤"><a href="#核心步骤" class="headerlink" title="核心步骤"></a>核心步骤</h5><ol>
-<li>任何新的功能（feature）或 bug 修复全都新建一个 branch 来写；</li>
-<li>branch 写完后，合并到 master，然后删掉这个 branch。</li>
-</ol>
-        
-          <a class="article-more-a" href="/2020/05/14/Git—Feature Branching/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/Git—Feature Branching/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git—merge" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/Git—merge/">Git—merge</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/Git—merge/" class="archive-article-date">
-  	<time datetime="2020-05-14T05:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Git—merge"><a href="#Git—merge" class="headerlink" title="Git—merge"></a>Git—merge</h4><blockquote>
-<p>pull 的内部操作其实是把远程仓库取到本地后（使用的是 fetch），再用一次 merge 来把远端仓库的新 commits 合并到本地。</p>
-</blockquote>
-<p>merge ：从目标 commit 和当前 commit （即 HEAD 所指向的 commit）分叉的位置起，把目标 commit 的路径上的所有 commit 的内容一并应用到当前 commit，然后自动生成一个新的 commit。</p>
-        
-          <a class="article-more-a" href="/2020/05/14/Git—merge/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/Git—merge/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git—push" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/Git—push/">Git—push</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/Git—push/" class="archive-article-date">
-  	<time datetime="2020-05-14T04:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Git—push"><a href="#Git—push" class="headerlink" title="Git—push"></a>Git—push</h4><blockquote>
-<p>push 做的事是：把当前 branch 的位置（即它指向哪个 commit）上传到远端仓库，并把它的路径上的 commits 一并上传。</p>
-</blockquote>
-<p>例如，本地仓库有一个 master ，它超前了远程仓库两个提交；另外还有一个新建的 branch 叫 feature1，远程仓库还没有记载过它。具体大概像这样：</p>
-        
-          <a class="article-more-a" href="/2020/05/14/Git—push/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/Git—push/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git—HEAD、master 与 branch" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/Git—HEAD、master 与 branch/">Git—HEAD、master 与 branch</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/Git—HEAD、master 与 branch/" class="archive-article-date">
-  	<time datetime="2020-05-14T03:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Git—HEAD、master-与-branch"><a href="#Git—HEAD、master-与-branch" class="headerlink" title="Git—HEAD、master 与 branch"></a>Git—HEAD、master 与 branch</h4><h5 id="引用：commit-的快捷方式"><a href="#引用：commit-的快捷方式" class="headerlink" title="引用：commit 的快捷方式"></a>引用：commit 的快捷方式</h5><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">log</span></span><br></pre></td></tr></table></figure>
-<p><img src="http://pics.blackbirdsport.com/album/202005/1502808_1589447084767.png" alt></p>
-        
-          <a class="article-more-a" href="/2020/05/14/Git—HEAD、master 与 branch/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/Git—HEAD、master 与 branch/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Git—基本工作模型" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/14/Git—基本工作模型/">Git—基本工作模型</a>
-    </h1>
-  
-
-        
-        <a href="/2020/05/14/Git—基本工作模型/" class="archive-article-date">
-  	<time datetime="2020-05-14T02:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-14</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="Git—基本工作模型"><a href="#Git—基本工作模型" class="headerlink" title="Git—基本工作模型"></a>Git—基本工作模型</h4><blockquote>
-<p>团队协同工作并不像前面单人的操作流程，同事也会add、commit、push，这会让git的协同工作流程变得不再简单。</p>
+        <h4 id="gitignore——排除不想被管理的文件和目录"><a href="#gitignore——排除不想被管理的文件和目录" class="headerlink" title=".gitignore——排除不想被管理的文件和目录"></a>.gitignore——排除不想被管理的文件和目录</h4><blockquote>
+<p>在 Git 中有一个特殊的文本文件：.gitignore。这个文本文件记录了所有你希望被 Git 忽略的目录和文件。</p>
 </blockquote>
         
-          <a class="article-more-a" href="/2020/05/14/Git—基本工作模型/#more">more >></a>
+          <a class="article-more-a" href="/2020/05/24/Git—.gitignore/#more">more >></a>
         
       
 
@@ -679,7 +204,7 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/14/Git—基本工作模型/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/24/Git—.gitignore/">展开全文 >></a>
         </p>
       
 
@@ -709,37 +234,114 @@
 
 
   
-    <article id="post-Git—安装-提交" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-Git—stash" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/05/13/Git—安装-提交/">Git—安装&amp;提交</a>
+      <a class="article-title" href="/2020/05/23/Git—stash/">Git—stash</a>
     </h1>
   
 
         
-        <a href="/2020/05/13/Git—安装-提交/" class="archive-article-date">
-  	<time datetime="2020-05-13T15:04:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-13</time>
+        <a href="/2020/05/23/Git—stash/" class="archive-article-date">
+  	<time datetime="2020-05-23T02:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-23</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h4 id="Git—安装-amp-提交"><a href="#Git—安装-amp-提交" class="headerlink" title="Git—安装&amp;提交"></a>Git—安装&amp;提交</h4><h5 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h5><ol>
-<li><a href="https://git-scm.com/" target="_blank" rel="noopener">下载</a></li>
-<li>下载后进行安装，不同操作系统有不同的安装方式，但都比较简单，这里不进行详细说明。</li>
-<li>安装后配置name、email,命令如下：</li>
-</ol>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git<span class="built_in"> config </span>--global user.name <span class="string">"Your Name"</span></span><br><span class="line">$ git<span class="built_in"> config </span>--global user.email <span class="string">"email@example.com"</span></span><br></pre></td></tr></table></figure>
+        <h4 id="stash：临时存放工作目录的改动"><a href="#stash：临时存放工作目录的改动" class="headerlink" title="stash：临时存放工作目录的改动"></a>stash：临时存放工作目录的改动</h4><blockquote>
+<p>在 Git 中，stash 指令可以帮你把工作目录的内容全部放在你本地的一个独立的地方，它不会被提交，也不会被删除，你把东西放起来之后就可以去做你的临时工作了，做完以后再来取走，就可以继续之前手头的事了。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2020/05/23/Git—stash/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/23/Git—stash/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—再探checkout" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/22/Git—再探checkout/">Git—再探reset</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/22/Git—再探checkout/" class="archive-article-date">
+  	<time datetime="2020-05-22T02:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-22</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout bra<span class="symbol">nch1</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>因为Git是分布式版本控制系统，所以，每个机器都必须自报家门：你的名字和Email地址。</p>
+<p>checkout 可以用来切换 branch</p>
+</blockquote>
+<p><strong>但是… checkout不止可以做切换分支</strong></p>
+<h4 id="checkout-本质上的功能其实是：签出指定的-commit"><a href="#checkout-本质上的功能其实是：签出指定的-commit" class="headerlink" title="checkout 本质上的功能其实是：签出指定的 commit"></a>checkout 本质上的功能其实是：签出指定的 commit</h4><blockquote>
+<p>git checkout branch名 的本质，其实是把 HEAD 指向指定的 branch，然后签出这个 branch 所对应的 commit 的工作目录。所以同样的，checkout 的目标也可以不是 branch，而直接指定某个 commit：</p>
 </blockquote>
         
-          <a class="article-more-a" href="/2020/05/13/Git—安装-提交/#more">more >></a>
+          <a class="article-more-a" href="/2020/05/22/Git—再探checkout/#more">more >></a>
         
       
 
@@ -763,7 +365,411 @@
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/2020/05/13/Git—安装-提交/">展开全文 >></a>
+          <a class="article-more-a" href="/2020/05/22/Git—再探checkout/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—再探reset" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/21/Git—再探reset/">Git—再探reset</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/21/Git—再探reset/" class="archive-article-date">
+  	<time datetime="2020-05-21T02:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>用这行代码可以撤销掉当前 commit</p>
+</blockquote>
+<h4 id="reset-的本质：移动-HEAD-以及它所指向的-branch"><a href="#reset-的本质：移动-HEAD-以及它所指向的-branch" class="headerlink" title="reset 的本质：移动 HEAD 以及它所指向的 branch"></a>reset 的本质：移动 HEAD 以及它所指向的 branch</h4><blockquote>
+<p>实质上，reset 这个指令虽然可以用来撤销 commit ，但它的实质行为并不是撤销，而是移动 HEAD ，并且「捎带」上 HEAD 所指向的 branch（如果有的话）。也就是说，reset 这个指令的行为其实和它的字面意思 “reset”（重置）十分相符：它是用来重置 HEAD 以及它所指向的 branch 的位置的。</p>
+<p>而 reset –hard HEAD^ 之所以起到了撤销 commit 的效果，是因为它把 HEAD 和它所指向的 branch 一起移动到了当前 commit 的父 commit 上，从而起到了「撤销」的效果：</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2020/05/21/Git—再探reset/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/21/Git—再探reset/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—远程纠错" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/20/Git—远程纠错/">Git—远程纠错</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/20/Git—远程纠错/" class="archive-article-date">
+  	<time datetime="2020-05-20T02:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>代码 push 到了中央仓库，才发现有个 commit 写错了。这种问题的处理分两种情况。</p>
+</blockquote>
+<h4 id="1-出错的内容在你自己的-branch"><a href="#1-出错的内容在你自己的-branch" class="headerlink" title="1. 出错的内容在你自己的 branch"></a>1. 出错的内容在你自己的 branch</h4><p>假如是某个你自己独立开发的 branch 出错了，不会影响到其他人，那没关系用前面几节讲的方法把写错的 commit 修改或者删除掉，然后再 push 上去就好了。不过会被拒绝的，</p>
+<blockquote>
+<p>由于你在本地对已有的 commit 做了修改，这时你再 push 就会失败，因为中央仓库包含本地没有的 commits。但这个和前面讲过的情况不同，这次的冲突不是因为同事 push 了新的提交，而是因为你刻意修改了一些内容，这个冲突是你预料到的，你本来就希望用本地的内容覆盖掉中央仓库的内容。那么这时就不要先 pull 一下再 push 了，而是要选择「强行」push：</p>
+</blockquote>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">git</span> <span class="keyword">push </span>origin <span class="keyword">branch1 </span>-f</span><br></pre></td></tr></table></figure>
+<p>-f 是 –force 的缩写，意为「忽略冲突，强制 push」。</p>
+<p>这样，在本地修改了错误的 commits，然后强制 push 上去，问题就解决了。<br>
+        
+          <a class="article-more-a" href="/2020/05/20/Git—远程纠错/#more">more >></a>
+        
+      
+
+      
+    </p></div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/20/Git—远程纠错/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—rebase -i 撤销提交" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/19/Git—rebase -i 撤销提交/">Git rebase -i 撤销提交</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/19/Git—rebase -i 撤销提交/" class="archive-article-date">
+  	<time datetime="2020-05-19T02:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-19</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="rebase-i：撤销提交"><a href="#rebase-i：撤销提交" class="headerlink" title="rebase -i：撤销提交"></a>rebase -i：撤销提交</h4><blockquote>
+<p>交互式 rebase 可以用来修改某些旧的 commits。其实除了修改提交，它还可以用于撤销提交。</p>
+</blockquote>
+        
+          <a class="article-more-a" href="/2020/05/19/Git—rebase -i 撤销提交/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/19/Git—rebase -i 撤销提交/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—reset --hard" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/18/Git—reset --hard/">Git reset --hard</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/18/Git—reset --hard/" class="archive-article-date">
+  	<time datetime="2020-05-18T09:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="reset-–hard-丢弃最新的提交"><a href="#reset-–hard-丢弃最新的提交" class="headerlink" title="reset –hard 丢弃最新的提交"></a>reset –hard 丢弃最新的提交</h4><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">reset</span> <span class="comment">--hard HEAD^</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>HEAD 表示 HEAD^ 往回数一个位置的 commit</p>
+</blockquote>
+<p>HEAD^ 表示你要恢复到哪个 commit。因为你要撤销最新的一个 commit，所以你需要恢复到它的父 commit ，也就是 HEAD^。那么在这行之后，你的最新一条就被撤销了：</p>
+        
+          <a class="article-more-a" href="/2020/05/18/Git—reset --hard/#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/18/Git—reset --hard/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-Git—amend" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/05/18/Git—amend/">Git—amend</a>
+    </h1>
+  
+
+        
+        <a href="/2020/05/18/Git—amend/" class="archive-article-date">
+  	<time datetime="2020-05-18T07:05:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-18</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h4 id="amend——修正提交"><a href="#amend——修正提交" class="headerlink" title="amend——修正提交"></a>amend——修正提交</h4><blockquote>
+<p>在提交时，如果加上 –amend 参数，Git 不会在当前 commit 上增加 commit，而是会把当前 commit 里的内容和暂存区（stageing area）里的内容合并起来后创建一个新的 commit，用这个新的 commit 把当前 commit 替换掉。所以 commit –amend 做的事就是它的字面意思：对最新一条 commit 进行修正。</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">commit</span> <span class="comment">--amend</span></span><br></pre></td></tr></table></figure>
+<p><img src="http://pics.blackbirdsport.com/album/202007/1502808_1593660325295" alt></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/05/18/Git—amend/">展开全文 >></a>
         </p>
       
 
@@ -795,7 +801,7 @@
   
   
     <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
     </nav>
   
 
@@ -910,10 +916,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">Mac</a>
               </li>
              
@@ -922,11 +924,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
+                <a href="javascript:void(0)" class="js-tag color3">英语</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">英语</a>
+                <a href="javascript:void(0)" class="js-tag color2">beauty</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">组织行为学</a>
               </li>
              
               <li class="article-tag-list-item">
